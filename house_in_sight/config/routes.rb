@@ -1,4 +1,6 @@
 HouseInSight::Application.routes.draw do
+  resources :apartments
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
