@@ -8,9 +8,24 @@
 </head>
 <body>
   <div class="container">
-    <div class="header"><h1 class="header">House In Sight</h1></div>
-    <div class="sidebar">side bar</div>
-    <div class="main"><%= yield %></div>
+    <div class="header">
+      <h1 class="header">House In Sight</h1>
+      <h2>为您提供最权威，最全面，最客观的楼盘报告</h2>
+    </div>
+    <div class="sidebar">
+      <img alt=手机找二手房" src="/ads/anjuke.jpeg"/>
+    </div>
+    <div class="main">
+      <div class="search">
+        <input id="search_key" name="" size="80" type="text"/> 
+        <input name="commit" type="submit" value="查找"/>
+        <p> <a href="#">当前共有1000个最新楼盘报告. </a></p>
+      </div>
+
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
     <div class="footer">Copyright 2012 by HouseInSight.</div>
   </div>
 </body>

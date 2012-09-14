@@ -1,3 +1,25 @@
 // Place all the styles related to the Apartments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#apartment-list.apartment-item img {
+  clear: both;
+  width: 10em;
+  height: 10em;
+  float: left;
+  margin: 2em;
+  padding: 2em;
+
+}
+.profile {
+  float: right;
+
+}
+.renders {
+  float: right;
+}
+#apartment-list.apartment-item {
+  float: left;
+}
+div.clear {
+  clear: both;
+}

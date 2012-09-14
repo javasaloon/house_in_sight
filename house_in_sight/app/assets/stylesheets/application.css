@@ -12,16 +12,23 @@
  *= require_tree .
  */
 div.container {
-  width:100%;
-  margin:0px;
+  width:75%;
+  margin:0px auto;
   border:1px solid gray;
   line-height:150%;
+}
+div.search {
+  margin:5px auto;
 }
 div.header, div.footer {
   padding:0.5em;
   color:white;
   background-color:gray;
   clear:left;
+}
+div.footer {
+  background-color: gray;
+  text-align: center;
 }
 h1.header {
   padding:0;
@@ -33,9 +40,20 @@ div.sidebar {
   margin:0;
   padding:1em;
 }
+.sidebar img {
+  width: 90%;
+  height: auto;
+}
 div.main {
   margin-right:190px;
   border-right:1px solid gray;
   padding:1em;
+}
+div.content {
+  padding:1em;
+  border-top-color: yellow;
+  border-top-width: 2px;
+  border-top-style: dotted;
+
 }
 
