@@ -16,19 +16,22 @@
 }
 
 .profile {
-  /*float: left;*/
-
+  margin: 0px;
+  padding: 1em;
 }
 .renders {
   /*float: left;*/
   position: relative;
   left: 120px;
-  top: 1px;
+  top: 0px;
   width: 20em;
   height: auto;
 }
-#apartment-list.apartment-item {
-  /*float: left;*/
+.apartment-item {
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  border-bottom-color: gray;
+  border-bottom-width: 1px;
 }
 div.clear {
   clear: both;
