@@ -33,7 +33,7 @@ div {
 div.container {
   width:75%;
   margin:0px auto;
-  /*line-height:150%;*/
+  line-height:150%;
 }
 div.header {
   padding:0.5em;
@@ -42,10 +42,12 @@ div.header {
 div.main {
   padding:1em;
   width: 50em;
+  height: 100%;
 }
 div.sidebar {
   float: right;
   width: 10em;
+  height: 100%;
   padding:0;
 }
 div.footer {
@@ -65,13 +67,13 @@ h1.header {
 h3.mission {
   font-style: italic;
 }
-ul.nav {
+div.header ul.nav {
   margin: 5px;
   padding: 5px;
   list-style-type: none;
   float: right;
 }
-ul.nav li { 
+div.header ul.nav li { 
   float: left;
   margin: 1px;
 }
@@ -81,12 +83,52 @@ ul.nav li {
 div.search {
   margin:5px auto;
 }
+div.main .subheader {
+  margin: 0px;
+  padding: 0px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+div.main .subheader .tab {
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  padding-right: 2em;
+  position: relative;
+  margin-bottom: 0px;
+}
+div.main .subheader .report { 
+  position: relative;
+  left: 0em;
+
+}
+div.main .subheader a { 
+  /*border-bottom-style: solid;*/
+  /*border-bottom-width: 1px;*/
+  padding: 0.2em;
+  padding-bottom: 0px;
+  margin: 0px;
+}
+
+div.main .subheader a.current { 
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-bottom-color: white;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+}
+
 
 div.content {
   padding:1em;
-  border-top-color: dark;
-  border-top-width: 1px;
-  border-top-style: solid;
+  margin-left: 0px;
+  padding-left: 0px;
+
+  /*border-top-color: dark;*/
+  /*border-top-width: 1px;*/
+  /*border-top-style: solid;*/
 }
 /*
  * Sidebar

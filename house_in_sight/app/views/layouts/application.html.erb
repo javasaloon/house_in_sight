@@ -20,40 +20,51 @@
       <h1 class="header">House In Sight</h1>
       <h3 class="mission">为您提供最权威，最全面，最客观的楼盘报告</h3>
     </div>
-    <div class="sidebar">
-      <h3>我的标签</h3>
-      <input id="add_tag" name="" size="10" type="text"/>
-      <input name="commit" type="submit" value="添加"/>
-      <ul class="tags">
-        <li><span><a href="#">花园洋房</a></span> X 2109</li>
-        <li><span><a href="#">地铁房</a></span> X 2001</li>
-      </ul>
+    <div class="bady">
+      <div class="sidebar">
+        <h3>我的标签</h3>
+        <input id="add_tag" name="" size="10" type="text"/>
+        <input name="commit" type="submit" value="添加"/>
+        <ul class="tags">
+          <li><span><a href="#">花园洋房</a></span> X 2109</li>
+          <li><span><a href="#">地铁房</a></span> X 2001</li>
+        </ul>
 
-      <h3>热门标签</h3>
-      <ul class="tags">
-        <li><span><a href="#">花园洋房</a></span> X 2109</li>
-        <li><span><a href="#">地铁房</a></span> X 2001</li>
-        <li><span><a href="#">现房</a></span> X 1808</li>
-        <li><span><a href="#">品牌开发商</a></span> X 1206</li>
-        <li><span><a href="#">打折楼盘</a></span> X 1002</li>
-      </ul>
-      <br/>
-      <a href="#"><img alt="" src="/ads/ads1.jpeg"/></a>
-      <br/>
-      <a href="#"><img alt="" src="/ads/ads2.jpeg"/></a>
-    </div>
-    <div class="main">
-      <div class="search">
-        <input id="search_key" name="" size="80" type="text" value="输入楼盘名称，地区或者街道"/>
-        <input name="commit" type="submit" value="搜索"/>
-        <p> <a href="#">当前共有1000个最新楼盘报告. </a></p>
+        <h3>热门标签</h3>
+        <ul class="tags">
+          <li><span><a href="#">花园洋房</a></span> X 2109</li>
+          <li><span><a href="#">地铁房</a></span> X 2001</li>
+          <li><span><a href="#">现房</a></span> X 1808</li>
+          <li><span><a href="#">品牌开发商</a></span> X 1206</li>
+          <li><span><a href="#">打折楼盘</a></span> X 1002</li>
+        </ul>
+        <br/>
+        <a href="#"><img alt="" src="/ads/ads1.jpeg"/></a>
+        <br/>
+        <a href="#"><img alt="" src="/ads/ads2.jpeg"/></a>
       </div>
-
-      <div class="content">
-        <%= yield %>
+      <div class="main">
+        <div class="search">
+          <input id="search_key" name="" size="80" type="text" value="输入楼盘名称，地区或者街道"/>
+          <input name="commit" type="submit" value="搜索"/>
+        </div>
+        <div class="subheader">
+          <a class="report" href="#">当前共有1000个最新楼盘报告. </a>
+          <div class="tab">
+            <a class="current" href="#">热门楼盘</a>
+            <a href="#">打折楼盘</a>
+            <a href="#">我的收藏</a>
+            <a href="#">我的报告</a>
+            <a href="#">我的日记</a>
+          </div>
+        </div>
+        <div class="content">
+          <%= yield %>
+        </div>
       </div>
     </div>
     <div class="footer">Copyright 2012 by HouseInSight.</div>
   </div>
 </body>
 </html>
+<li><a href="#">收藏</a></li>
