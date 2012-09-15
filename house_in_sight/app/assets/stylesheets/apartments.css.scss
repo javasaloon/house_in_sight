@@ -43,3 +43,28 @@
 div.clear {
   clear: both;
 }
+div.pagination {
+  margin: 0em;
+  padding: 0em;
+}
+div.pagination ul {
+  margin: 0em;
+  padding: 0em;
+}
+div.pagination li {
+  display: inline;
+  margin: 0.1em;
+  padding: 0.1em;
+
+}
+div.pagination .number, .current  {
+  border-width: 1px;
+  border-style: solid;
+  border-color: gray;
+  margin: 0.1em;
+  padding: 0.1em;
+
+}
+div.pagination .current {
+  background-color: #90d7ec;
+}
