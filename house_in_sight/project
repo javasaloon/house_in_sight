@@ -1,0 +1,132 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/workspace/house_in_sight/house_in_sight
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 app/.DS_Store
+badd +43 app/views/layouts/application.html.erb
+badd +0 app/assets/stylesheets/application.css
+badd +14 app/assets/stylesheets/apartments.css.scss
+badd +0 app/views/apartments/index.html.erb
+silent! argdel *
+edit app/assets/stylesheets/application.css
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 62 + 62) / 124)
+exe 'vert 2resize ' . ((&columns * 61 + 62) / 124)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 21 - ((16 * winheight(0) + 17) / 34)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+21
+normal! 01l
+lcd ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets
+wincmd w
+argglobal
+edit ~/workspace/house_in_sight/house_in_sight/app/views/layouts/application.html.erb
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 20 - ((16 * winheight(0) + 17) / 34)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+20
+normal! 07l
+lcd ~/workspace/house_in_sight/house_in_sight/app/views/layouts
+wincmd w
+exe 'vert 1resize ' . ((&columns * 62 + 62) / 124)
+exe 'vert 2resize ' . ((&columns * 61 + 62) / 124)
+tabedit ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/apartments.css.scss
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 62 + 62) / 124)
+exe 'vert 2resize ' . ((&columns * 61 + 62) / 124)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 14 - ((13 * winheight(0) + 17) / 34)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+14
+normal! 01l
+lcd ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets
+wincmd w
+argglobal
+edit ~/workspace/house_in_sight/house_in_sight/app/views/apartments/index.html.erb
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 23 - ((22 * winheight(0) + 17) / 34)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+23
+normal! 06l
+lcd ~/workspace/house_in_sight/house_in_sight/app/views/apartments
+wincmd w
+exe 'vert 1resize ' . ((&columns * 62 + 62) / 124)
+exe 'vert 2resize ' . ((&columns * 61 + 62) / 124)
+tabnext 1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filmnrxoOtT
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

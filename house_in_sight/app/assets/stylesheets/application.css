@@ -11,17 +11,56 @@
  *= require_self
  *= require_tree .
  */
+/*
+ * General
+ */
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+div {
+  /*border:1px solid gray;*/
+  margin:4px;
+  padding:4px;
+}
+/*
+ * High level layout: container
+ *                      - header
+ *                      - main
+ *                      - sidebar
+ *                      - footer
+ */
 div.container {
   width:75%;
   margin:0px auto;
-  line-height:150%;
+  /*line-height:150%;*/
 }
-div.search {
-  margin:5px auto;
+div.header {
+  padding:0.5em;
+  /*clear:left;*/
 }
-div.header, div.footer {
+div.main {
+  padding:1em;
+  width: 50em;
+}
+div.sidebar {
+  float: right;
+  width: 10em;
+  padding:0;
+}
+div.footer {
   padding:0.5em;
   clear:left;
+  background-color: gray;
+  text-align: center;
+  color:white;
+}
+/*
+ * Header
+ */
+h1.header {
+  padding:0;
+  margin:0;
 }
 ul.nav {
   margin: 0;
@@ -33,6 +72,22 @@ ul.nav li {
   float: left; 
   margin-right: 0.6em;
 }
+/*
+ * Main
+ */
+div.search {
+  margin:5px auto;
+}
+
+div.content {
+  padding:1em;
+  border-top-color: yellow;
+  border-top-width: 2px;
+  border-top-style: dotted;
+}
+/*
+ * Sidebar
+ */
 ul.tags {
   /*margin: 0;*/
   clear: both;
@@ -46,40 +101,8 @@ ul.tags li {
 ul.tags li span {
   background-color: #d3d7d4;
 }
-a:link {
-  color: blue;
-  text-decoration: none;
-}
-
-div.footer {
-  background-color: gray;
-  text-align: center;
-  color:white;
-}
-h1.header {
-  padding:0;
-  margin:0;
-}
-div.sidebar {
-  float: right;
-  width:160px;
-  margin:0;
-  padding:1em;
-}
 .sidebar img {
   width: 90%;
   height: auto;
-}
-div.main {
-  margin-right:190px;
-  /*border-right:1px solid gray;*/
-  padding:1em;
-}
-div.content {
-  padding:1em;
-  border-top-color: yellow;
-  border-top-width: 2px;
-  border-top-style: dotted;
-
 }
 

@@ -3,25 +3,20 @@
   <div class="apartment-item">
     <div class="thumbnail">
       <%= image_tag(apartment.image_url) %>
+    </div>
+    <div class="renders">
       <ul class="profile">
         <li><%= apartment.name %></li>
         <li><%= apartment.price %></li>
         <li><%= apartment.description %></li>
       </ul>
 
-    </div>
-    
-    <div class="renders">
       <%= link_to 'Show', apartment %>
       <%= link_to 'Edit', edit_apartment_path(apartment) %>
       <%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %>
       <%= link_to 'New', new_apartment_path %>
     </div>
   </div>
-  <div class="clear"></div>
+  <%#<div class="clear"></div>%>
 <% end %>
 </div>
-
-
-<br />
-
