@@ -106,10 +106,17 @@ div.main .subheader .report {
 div.main .subheader a { 
   /*border-bottom-style: solid;*/
   /*border-bottom-width: 1px;*/
-  padding: 0.2em;
+  padding: 0.5em;
   padding-bottom: 0px;
   margin: 0px;
 }
+
+div.main .subheader .tab a:hover { 
+  padding: 0.2em;
+  border-style: hidden;
+  background-color: gray;
+}
+
 
 div.main .subheader a.current { 
   border-style: solid;
