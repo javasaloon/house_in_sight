@@ -14,7 +14,6 @@
 div.container {
   width:75%;
   margin:0px auto;
-  border:1px solid gray;
   line-height:150%;
 }
 div.search {
@@ -22,13 +21,40 @@ div.search {
 }
 div.header, div.footer {
   padding:0.5em;
-  color:white;
-  background-color:gray;
   clear:left;
 }
+ul.nav {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: right;
+}
+ul.nav li { 
+  float: left; 
+  margin-right: 0.6em;
+}
+ul.tags {
+  /*margin: 0;*/
+  clear: both;
+}
+ul.tags li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+ul.tags li span {
+  background-color: #d3d7d4;
+}
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+
 div.footer {
   background-color: gray;
   text-align: center;
+  color:white;
 }
 h1.header {
   padding:0;
@@ -46,7 +72,7 @@ div.sidebar {
 }
 div.main {
   margin-right:190px;
-  border-right:1px solid gray;
+  /*border-right:1px solid gray;*/
   padding:1em;
 }
 div.content {
