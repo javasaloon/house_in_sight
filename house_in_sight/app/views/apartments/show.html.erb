@@ -21,6 +21,15 @@
       mapTypeControl: false,
       overviewMapControl: false
     });
+    map.addMarker({
+      lat: 31.230393,
+      lng: 121.473704,
+
+      title: '上海',
+      click: function(e) {
+        alert('这是上海中心城区');
+      }
+    });
   });
 </script>
 
