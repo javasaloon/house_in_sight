@@ -2,7 +2,7 @@
   <% @apartments.each do |apartment| %>
     <div class="apartment-item">
       <div class="thumbnail">
-        <%= image_tag(apartment.image_url) %>
+        <%= link_to image_tag(apartment.image_url), apartment %>
       </div>
       <div class="renders">
         <ul class="profile">
@@ -11,8 +11,6 @@
           <li><%= apartment.description %></li>
         </ul>
 
-        <%= link_to 'Show', apartment %>
-        <%= link_to 'Edit', edit_apartment_path(apartment) %>
         <%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %>
         <%= link_to 'New', new_apartment_path %>
       </div>
