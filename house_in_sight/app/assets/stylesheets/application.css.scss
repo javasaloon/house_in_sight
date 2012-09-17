@@ -63,18 +63,17 @@ div.header {
 
 }
 div.body {
-  height: auto;
+  overflow: hidden;
 }
 div.main {
-  padding:1em;
-  width: 50em;
-  /*height: 100%;*/
+  padding: 2px;
+  width: 75%;
+  float: left;
 }
 div.sidebar {
   float: right;
-  width: 10em;
-  height: auto;
-  padding:0;
+  width: 20%;
+  padding:2px;
   img {
     width: 90%;
     height: auto;
@@ -114,17 +113,17 @@ div.search {
 
 div.main {
   .subheader {
-    margin: 0px;
-    padding: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     border-bottom-color: black;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    .tab {
+    overflow: hidden;
+
+    div.tab {
       float: right;
-      margin: 0px;
-      padding: 0px;
-      padding-right: 2em;
-      position: relative;
+      padding-right: 1em;
+      padding-bottom: 0px;
       margin-bottom: 0px;
 
       a:hover { 
@@ -144,9 +143,13 @@ div.main {
 
     }
 
-    .report { 
-      position: relative;
-      left: 0em;
+    div.report { 
+      float: left;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      padding-left: 0px;
+      margin-left: 0px;
+
     }
 
     a { 
