@@ -9,12 +9,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 app/.DS_Store
-badd +43 app/views/layouts/application.html.erb
-badd +0 app/assets/stylesheets/application.css
-badd +14 app/assets/stylesheets/apartments.css.scss
-badd +0 app/views/apartments/index.html.erb
+badd +56 app/views/layouts/application.html.erb
+badd +28 app/assets/stylesheets/application.css
+badd +31 app/assets/stylesheets/apartments.css.scss
+badd +1 app/views/apartments/index.html.erb
+badd +12 app/assets/stylesheets/application.css.scss
+badd +16 app/assets/javascripts/application.js
+badd +12 Gemfile
 silent! argdel *
-edit app/assets/stylesheets/application.css
+edit app/assets/stylesheets/application.css.scss
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -24,10 +27,9 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 62 + 62) / 124)
-exe 'vert 2resize ' . ((&columns * 61 + 62) / 124)
+wincmd =
 argglobal
-setlocal fdm=manual
+setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -35,18 +37,35 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 21 - ((16 * winheight(0) + 17) / 34)
+22
+normal zo
+66
+normal zo
+69
+normal zo
+74
+normal zo
+115
+normal zo
+116
+normal zo
+124
+normal zo
+136
+normal zo
+147
+normal zo
+let s:l = 16 - ((15 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
-normal! 01l
+16
+normal! 03l
 lcd ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets
 wincmd w
 argglobal
 edit ~/workspace/house_in_sight/house_in_sight/app/views/layouts/application.html.erb
-setlocal fdm=manual
+setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -54,17 +73,29 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 20 - ((16 * winheight(0) + 17) / 34)
+12
+normal zo
+13
+normal zo
+27
+normal zo
+50
+normal zo
+55
+normal zo
+56
+normal zo
+59
+normal zo
+let s:l = 28 - ((27 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 07l
+28
+normal! 04l
 lcd ~/workspace/house_in_sight/house_in_sight/app/views/layouts
 wincmd w
-exe 'vert 1resize ' . ((&columns * 62 + 62) / 124)
-exe 'vert 2resize ' . ((&columns * 61 + 62) / 124)
+wincmd =
 tabedit ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/apartments.css.scss
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -75,8 +106,7 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 62 + 62) / 124)
-exe 'vert 2resize ' . ((&columns * 61 + 62) / 124)
+wincmd =
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -87,12 +117,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 17) / 34)
+let s:l = 17 - ((16 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 01l
+17
+normal! 019l
 lcd ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets
 wincmd w
 argglobal
@@ -106,16 +136,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((22 * winheight(0) + 17) / 34)
+let s:l = 26 - ((15 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 06l
+26
+normal! 03l
 lcd ~/workspace/house_in_sight/house_in_sight/app/views/apartments
 wincmd w
-exe 'vert 1resize ' . ((&columns * 62 + 62) / 124)
-exe 'vert 2resize ' . ((&columns * 61 + 62) / 124)
+wincmd =
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
