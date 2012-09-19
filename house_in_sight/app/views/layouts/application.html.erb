@@ -2,11 +2,16 @@
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
   <title>HouseInSight</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag  "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=" type="text/javascript" charset="utf-8"></script>
   <%= yield(:head) %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#search_button").button();
+    });
+  </script>
 </head>
 <body>
   <div class="container">
@@ -48,8 +53,8 @@
       </div>
       <div class="main">
         <div class="search">
-          <input id="search_key" name="" size="80" type="text" value="输入楼盘名称，地区或者街道"/>
-          <input name="commit" type="submit" value="搜索"/>
+          <input class="search_key" name="" size="80" type="text" value="输入楼盘名称，地区或者街道"/>
+          <input id="search_button"_button" name="commit" type="button" value="搜索"/>
         </div>
         <div class="subheader">
           <div class='report'>
