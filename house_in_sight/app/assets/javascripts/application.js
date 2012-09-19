@@ -14,3 +14,24 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+var search = {
+
+    autocompleted: function(dom) {
+        var availableTags = [
+            "黄埔花园",
+            "中环别墅"
+        ];
+        $(dom).autocomplete({
+            source: availableTags
+        });
+        $(dom).button().css({
+            'font' : 'inherit',
+            'color' : 'inherit',
+            'text-align' : 'left',
+            'outline' : 'none',
+            'cursor' : 'text'
+        });
+
+    }
+}
+

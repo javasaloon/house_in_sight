@@ -10,6 +10,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $("#search_button").button();
+      search.autocompleted($("#search_key"));
     });
   </script>
 </head>
@@ -53,7 +54,7 @@
       </div>
       <div class="main">
         <div class="search">
-          <input class="search_key" name="" size="80" type="text" value="输入楼盘名称，地区或者街道"/>
+          <input id="search_key"  name="" size="80" type="text" value="输入楼盘名称，地区或者街道"/>
           <input id="search_button"_button" name="commit" type="button" value="搜索"/>
         </div>
         <div class="subheader">
