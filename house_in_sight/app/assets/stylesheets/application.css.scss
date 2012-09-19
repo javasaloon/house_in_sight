@@ -112,54 +112,6 @@ div.search {
   margin:5px auto;
 }
 
-div.main {
-  .subheader {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    border-bottom-color: black;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    overflow: hidden;
-
-    div.tab {
-      float: right;
-      padding-right: 1em;
-      padding-bottom: 0px;
-      margin-bottom: 0px;
-
-      a:hover { 
-        padding: 0.2em;
-        border-style: hidden;
-        background-color: gray;
-      }
-
-      .current { 
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
-        border-bottom-color: white;
-        border-bottom-style: solid;
-        border-bottom-width: 3px;
-      }
-
-    }
-
-    div.report { 
-      float: left;
-      padding-bottom: 0px;
-      margin-bottom: 0px;
-      padding-left: 0px;
-      margin-left: 0px;
-
-    }
-
-    a { 
-      padding: 0.5em;
-      padding-bottom: 0px;
-      margin: 0px;
-    }
-  }
-}
 div.content {
   padding:1em;
   margin-left: 0px;

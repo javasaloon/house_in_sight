@@ -5,10 +5,13 @@
 </script>
 
 <div id="tabs">
-  <%#<ul>%>
-    <%#<li><a href="#apartment-list">热门楼盘</a></li>%>
-    <%#<li><a href="#house-blog">我的看房日记</a></li>%>
-  <%#</ul>%>
+  <ul>
+    <li><a href="#apartment-list">热门楼盘</a></li>
+    <li><a href="#tab-blog">看房日记</a></li>
+    <li><a href="#tab-discount">打折楼盘</a></li>
+    <li><a href="#tab-favor">我的收藏</a></li>
+    <li><a href="#tab-report">我的报告</a></li>
+  </ul>
   <div id="apartment-list">
     <% @apartments.each do |apartment| %>
       <div class="apartment-item">
@@ -47,5 +50,9 @@
       </ul>
     </div>
   </div>
-  <%#<div id="house-blog"> 我的看房日记</div>%>
+  <div id="tab-blog"> 看房日记</div>
+  <div id="tab-discount"> 打折楼盘</div>
+  <div id="tab-favor"> 我的收藏</div>
+  <div id="tab-report"> 我的报告</div>
+
 </div>
