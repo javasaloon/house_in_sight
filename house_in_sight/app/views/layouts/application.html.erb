@@ -7,70 +7,72 @@
   <%= csrf_meta_tags %>
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=" type="text/javascript" charset="utf-8"></script>
   <%= yield(:head) %>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#search_button").button();
-      search.autocompleted($("#search_key"));
-    });
-  </script>
 </head>
 <body>
-  <div class="row-fluid">
-    <div class="span4 offset1">
-      <h1 class="header">House In Sight</h1>
-      <h3 class="mission">为您提供最权威，最全面，最客观的楼盘报告</h3>
-    </div>
-    <div id="span7">
-      <ul class="nav nav-pills">
-        <li><a href="#">登陆/注册</a></li>
-        <li><a href="#">我的报告</a></li>
-        <li><a href="#">我的日记</a></li>
-        <li><a href="#">手机看报告</a></li>
-        <li><a href="#">关于我们</a></li>
-        <li><a href="#"><wb:share-button count="n" relateuid="2647082063" ></wb:share-button></a</li>
-      </ul>
-    </div>
-  </div>
-
   <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span4 offset1">
+        <h3>House In Sight</h3>
+        <h4>为您提供最权威，最全面，最客观的楼盘报告</h4>
+      </div>
+      <div id="span7">
+        <ul class="nav nav-pills">
+          <li><a href="#">登陆/注册</a></li>
+          <li><a href="#">我的报告</a></li>
+          <li><a href="#">我的日记</a></li>
+          <li><a href="#">手机看报告</a></li>
+          <li><a href="#">关于我们</a></li>
+          <li><a href="#"><wb:share-button count="n" relateuid="2647082063" ></wb:share-button></a</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="row-fluid">
       <div class="span8 offset1">
         <div class="search">
-          <input id="search_key"  name="" size="50" type="text" value="输入楼盘名称，地区或者街道"/>
-          <input id="search_button"_button" name="commit" type="button" value="搜索"/>
+          <form class="form-search">
+            <input id="search_key"  name="" class="span8" type="text" placeholder="输入楼盘名称，地区或者街道"/>
+            <button type="submit" class="btn">搜索</button>
+          </form>
         </div>
         <div class='report'>
           <a class="report" href="#">当前共有1000个楼盘报告. </a>
         </div>
         <div class="content">
-          <%= yield %>
+            <%= yield %>
+          </div>
         </div>
-      </div>
 
-      <div class="span2">
-        <h3>我的标签</h3>
-        <input id="add_tag" name="" size="10" type="text"/>
-        <input name="commit" type="submit" value="添加"/>
-        <ul class="tags">
-          <li><span><a href="#">花园洋房</a></span> X 2109</li>
-          <li><span><a href="#">地铁房</a></span> X 2001</li>
-        </ul>
+        <div class="span2">
+          <h4>我的标签</h4>
+          <form class="form-inline">
+              <input  class="span6" type="text"/>
+              <button type="submit" class="btn">添加</button>
+          </form>
+          <ul>
+            <li><span><a href="#">花园洋房</a></span> X 2109</li>
+            <li><span><a href="#">地铁房</a></span> X 2001</li>
+          </ul>
 
-        <h3>热门标签</h3>
-        <ul class="tags">
-          <li><span><a href="#">花园洋房</a></span> X 2109</li>
-          <li><span><a href="#">地铁房</a></span> X 2001</li>
-          <li><span><a href="#">现房</a></span> X 1808</li>
-          <li><span><a href="#">品牌开发商</a></span> X 1206</li>
-          <li><span><a href="#">打折楼盘</a></span> X 1002</li>
-        </ul>
-        <br/>
-        <a href="#"><img alt="" src="/ads/ads1.jpeg"/></a>
-        <br/>
-        <a href="#"><img alt="" src="/ads/ads2.jpeg"/></a>
-      </div>
+          <h4>热门标签</h4>
+          <ul>
+            <li><span><a href="#">花园洋房</a></span> X 2109</li>
+            <li><span><a href="#">地铁房</a></span> X 2001</li>
+            <li><span><a href="#">现房</a></span> X 1808</li>
+            <li><span><a href="#">品牌开发商</a></span> X 1206</li>
+            <li><span><a href="#">打折楼盘</a></span> X 1002</li>
+          </ul>
+          <p/>
+          <a href="#"><img alt="" src="/ads/ads1.jpeg" /></a>
+          <p/>
+          <a href="#"><img alt="" src="/ads/ads2.jpeg" /></a>
+        </div>
     </div>
+
+    <div class="row-fluid">
+      <div class="span10 offset1">Copyright 2012 by HouseInSight.</div>
+    </div>
+
   </div>
-  <div class="footer">Copyright 2012 by HouseInSight.</div>
 </body>
 </html>
