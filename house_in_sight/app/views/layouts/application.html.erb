@@ -15,22 +15,39 @@
   </script>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <ul class="nav">
-        <li>您好，请 <a href="#">登陆/注册</a></li>
-        <li><a href="#">我的报告</a></li>
-        <li><a href="#">我的日记</a></li>
-        <li>|</li>
-        <li><a href="#">手机看报告</a></li>
-        <li><a href="#">关于我们</a></li>
-        <li><wb:share-button count="n" relateuid="2647082063" ></wb:share-button></li>
-      </ul>
+  <div class="row-fluid">
+    <div class="span4 offset1">
       <h1 class="header">House In Sight</h1>
       <h3 class="mission">为您提供最权威，最全面，最客观的楼盘报告</h3>
     </div>
-    <div class="body">
-      <div class="sidebar">
+    <div id="span7">
+      <ul class="nav nav-pills">
+        <li><a href="#">登陆/注册</a></li>
+        <li><a href="#">我的报告</a></li>
+        <li><a href="#">我的日记</a></li>
+        <li><a href="#">手机看报告</a></li>
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#"><wb:share-button count="n" relateuid="2647082063" ></wb:share-button></a</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span8 offset1">
+        <div class="search">
+          <input id="search_key"  name="" size="50" type="text" value="输入楼盘名称，地区或者街道"/>
+          <input id="search_button"_button" name="commit" type="button" value="搜索"/>
+        </div>
+        <div class='report'>
+          <a class="report" href="#">当前共有1000个楼盘报告. </a>
+        </div>
+        <div class="content">
+          <%= yield %>
+        </div>
+      </div>
+
+      <div class="span2">
         <h3>我的标签</h3>
         <input id="add_tag" name="" size="10" type="text"/>
         <input name="commit" type="submit" value="添加"/>
@@ -52,20 +69,8 @@
         <br/>
         <a href="#"><img alt="" src="/ads/ads2.jpeg"/></a>
       </div>
-      <div class="main">
-        <div class="search">
-          <input id="search_key"  name="" size="50" type="text" value="输入楼盘名称，地区或者街道"/>
-          <input id="search_button"_button" name="commit" type="button" value="搜索"/>
-        </div>
-        <div class='report'>
-          <a class="report" href="#">当前共有1000个楼盘报告. </a>
-        </div>
-        <div class="content">
-          <%= yield %>
-        </div>
-      </div>
     </div>
-    <div class="footer">Copyright 2012 by HouseInSight.</div>
   </div>
+  <div class="footer">Copyright 2012 by HouseInSight.</div>
 </body>
 </html>

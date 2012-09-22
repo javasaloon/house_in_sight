@@ -4,55 +4,43 @@
   });
 </script>
 
-<div id="tabs">
-  <ul>
-    <li><a href="#apartment-list">热门楼盘</a></li>
-    <li><a href="#tab-blog">看房日记</a></li>
-    <li><a href="#tab-discount">打折楼盘</a></li>
-    <li><a href="#tab-favor">我的收藏</a></li>
-    <li><a href="#tab-report">我的报告</a></li>
-  </ul>
-  <div id="apartment-list">
-    <% @apartments.each do |apartment| %>
-      <div class="apartment-item">
-        <div class="thumbnail">
-          <%= link_to image_tag(apartment.image_url), apartment %>
-        </div>
-        <div class="renders">
-          <ul class="profile">
-            <li><%= apartment.name %></li>
-            <li><%= apartment.price %></li>
-            <li><%= apartment.description %></li>
-          </ul>
-
-          <%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%= link_to 'New', new_apartment_path %>
-        </div>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#apartment-list">热门楼盘</a></li>
+  <li><a href="#tab-blog">看房日记</a></li>
+  <li><a href="#tab-discount">打折楼盘</a></li>
+  <li><a href="#tab-favor">我的收藏</a></li>
+  <li><a href="#tab-report">我的报告</a></li>
+</ul>
+<div id="apartment-list">
+  <% @apartments.each do |apartment| %>
+    <div class="row-fluid">
+      <div class="span3">
+        <%= link_to image_tag(apartment.image_url), apartment %>
       </div>
-    <% end %>
-    <br/>
-    <div class="pagination">
-      <ul class="page-numbers">
-        <li><a href="#">上一页</a></li>
-        <li><a class="current" href="#">1</a></li>
-        <li><a class="number" href="#">2</a></li>
-        <li><a class="number" href="#">3</a></li>
-        <li><a href="#">...</a></li>
-        <li><a class="number" href="#">99</a></li>
-        <li><a class="number" href="#">100</a></li>
-        <li><a class="number" href="#">101</a></li>
-        <li><a href="#">下一页</a></li>
+      <div class="span5">
+        <ul class="profile">
+          <li><%= apartment.name %></li>
+          <li><%= apartment.price %></li>
+          <li><%= apartment.description %></li>
+        </ul>
 
-        <li>每页(<a class="current"href="#">10</a></li>
-        <li><a class="number" href="#">20</a></li>
-        <li><a class="number" href="#">30</a>)条</li>
-
-      </ul>
+        <%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'New', new_apartment_path %>
+      </div>
     </div>
+  <% end %>
+  <div class="pagination pagination-right">
+    <ul class="page-numbers">
+      <li><a href="#">上一页</a></li>
+      <li><a class="current" href="#">1</a></li>
+      <li><a class="number" href="#">2</a></li>
+      <li><a class="number" href="#">3</a></li>
+      <li><a href="#">...</a></li>
+      <li><a class="number" href="#">99</a></li>
+      <li><a class="number" href="#">100</a></li>
+      <li><a class="number" href="#">101</a></li>
+      <li><a href="#">下一页</a></li>
+    </ul>
   </div>
-  <div id="tab-blog"> 看房日记</div>
-  <div id="tab-discount"> 打折楼盘</div>
-  <div id="tab-favor"> 我的收藏</div>
-  <div id="tab-report"> 我的报告</div>
-
 </div>
+
