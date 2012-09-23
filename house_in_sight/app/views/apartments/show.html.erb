@@ -7,7 +7,7 @@
   var map;
   $(document).ready(function(){
     map = new GMaps({
-      div: '#map',
+      div: '#house-map',
       lat: 31.230393,
       lng: 121.473704,
 
@@ -21,6 +21,8 @@
       mapTypeControl: false,
       overviewMapControl: false
     });
+    $("#house-map").height('40em');
+
     map.addMarker({
       lat: 31.230393,
       lng: 121.473704,
@@ -52,5 +54,6 @@
 <div class='house-photo'>
   <%= image_tag(@apartment.image_url) %>
 </div>
-<div id="map"></div>
+<p/>
 
+<div id="house-map" class="span10" style="height=50em;"></div>

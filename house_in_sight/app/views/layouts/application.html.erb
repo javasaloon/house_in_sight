@@ -29,46 +29,35 @@
 
     <div class="row-fluid">
       <div class="span8 offset1">
-        <div class="search">
-          <form class="form-search">
-            <input id="search_key"  name="" class="span8" type="text" placeholder="输入楼盘名称，地区或者街道"/>
-            <button type="submit" class="btn">搜索</button>
-          </form>
-        </div>
-        <div class='report'>
-          <a class="report" href="#">当前共有1000个楼盘报告. </a>
-        </div>
-        <div class="content">
-            <%= yield %>
-          </div>
-        </div>
+        <%= yield %>
+      </div>
 
-        <div class="span2">
-          <h4>我的标签</h4>
-          <form class="form-inline">
-              <input  class="span6" type="text"/>
-              <button type="submit" class="btn">添加</button>
-          </form>
-          <ul>
-            <li><span><a href="#">花园洋房</a></span> X 2109</li>
-            <li><span><a href="#">地铁房</a></span> X 2001</li>
-          </ul>
+      <div class="span2">
+        <h4>我的标签</h4>
+        <form class="form-inline">
+          <input  class="span6" type="text"/>
+          <button type="submit" class="btn">添加</button>
+        </form>
+        <ul>
+          <li><span><a href="#">花园洋房</a></span> X 2109</li>
+          <li><span><a href="#">地铁房</a></span> X 2001</li>
+        </ul>
 
-          <h4>热门标签</h4>
-          <ul>
-            <li><span><a href="#">花园洋房</a></span> X 2109</li>
-            <li><span><a href="#">地铁房</a></span> X 2001</li>
-            <li><span><a href="#">现房</a></span> X 1808</li>
-            <li><span><a href="#">品牌开发商</a></span> X 1206</li>
-            <li><span><a href="#">打折楼盘</a></span> X 1002</li>
-          </ul>
-          <p/>
-          <a href="#"><img alt="" src="/ads/ads1.jpeg" /></a>
-          <p/>
-          <a href="#"><img alt="" src="/ads/ads2.jpeg" /></a>
-        </div>
+        <h4>热门标签</h4>
+        <ul>
+          <li><span><a href="#">花园洋房</a></span> X 2109</li>
+          <li><span><a href="#">地铁房</a></span> X 2001</li>
+          <li><span><a href="#">现房</a></span> X 1808</li>
+          <li><span><a href="#">品牌开发商</a></span> X 1206</li>
+          <li><span><a href="#">打折楼盘</a></span> X 1002</li>
+        </ul>
+        <p/>
+        <a href="#"><img alt="" src="/ads/ads1.jpeg" /></a>
+        <p/>
+        <a href="#"><img alt="" src="/ads/ads2.jpeg" /></a>
+      </div>
     </div>
-
+    <p/>
     <div class="row-fluid">
       <div class="span10 offset1">Copyright 2012 by HouseInSight.</div>
     </div>
