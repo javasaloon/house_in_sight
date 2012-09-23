@@ -29,6 +29,7 @@ gem 'jquery-ui-rails'
 gem 'carrierwave'
 gem 'wkhtmltopdf-binary'
 gem 'pdfkit', :git => 'git://github.com/pdfkit/pdfkit.git'
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
