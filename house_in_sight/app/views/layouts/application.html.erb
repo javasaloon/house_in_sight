@@ -11,11 +11,11 @@
 <body>
   <div class="container-fluid">
     <div class="row-fluid">
-      <div class="span4 offset1">
+      <div id="header_title" class="span4 offset1">
         <h3>House In Sight</h3>
         <h4>为您提供最权威，最全面，最客观的楼盘报告</h4>
       </div>
-      <div class="span4 offset7 top">
+      <div id="header_link" class="span5 offset1">
         <%- if user_signed_in? -%>
           <a href="#"><%= current_user.email  %></a>
           <a href="#"><%= link_to "退出", destroy_user_session_path, :method => :delete %></a>
@@ -30,7 +30,6 @@
 
     <div class="row-fluid">
       <div class="span8 offset1">
-        <p class="notice"><%= notice%> </p>
         <%= yield %>
       </div>
 
