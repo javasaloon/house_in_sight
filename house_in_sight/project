@@ -9,15 +9,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 app/.DS_Store
-badd +56 app/views/layouts/application.html.erb
+badd +28 app/views/layouts/application.html.erb
 badd +28 app/assets/stylesheets/application.css
-badd +31 app/assets/stylesheets/apartments.css.scss
+badd +4 app/assets/stylesheets/apartments.css.scss
 badd +1 app/views/apartments/index.html.erb
-badd +12 app/assets/stylesheets/application.css.scss
+badd +2 app/assets/stylesheets/application.css.scss
 badd +16 app/assets/javascripts/application.js
 badd +12 Gemfile
 silent! argdel *
-edit app/assets/stylesheets/application.css.scss
+edit app/views/layouts/application.html.erb
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -27,44 +27,22 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-wincmd =
+exe 'vert 1resize ' . ((&columns * 31 + 61) / 122)
+exe 'vert 2resize ' . ((&columns * 90 + 61) / 122)
 argglobal
-setlocal fdm=indent
+enew
+file NERD_tree_1
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
-22
-normal zo
-66
-normal zo
-69
-normal zo
-74
-normal zo
-115
-normal zo
-116
-normal zo
-124
-normal zo
-136
-normal zo
-147
-normal zo
-let s:l = 16 - ((15 * winheight(0) + 17) / 34)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-16
-normal! 03l
+setlocal nofen
 lcd ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets
 wincmd w
 argglobal
-edit ~/workspace/house_in_sight/house_in_sight/app/views/layouts/application.html.erb
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -77,17 +55,17 @@ setlocal fen
 normal zo
 13
 normal zo
-27
+14
 normal zo
-50
+31
 normal zo
-55
+32
 normal zo
-56
+47
 normal zo
 59
 normal zo
-let s:l = 28 - ((27 * winheight(0) + 16) / 33)
+let s:l = 28 - ((27 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -95,8 +73,9 @@ normal! zt
 normal! 04l
 lcd ~/workspace/house_in_sight/house_in_sight/app/views/layouts
 wincmd w
-wincmd =
-tabedit ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/apartments.css.scss
+exe 'vert 1resize ' . ((&columns * 31 + 61) / 122)
+exe 'vert 2resize ' . ((&columns * 90 + 61) / 122)
+tabedit ~/workspace/house_in_sight/house_in_sight/app/views/apartments/index.html.erb
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -106,8 +85,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-wincmd =
+exe 'vert 1resize ' . ((&columns * 31 + 61) / 122)
+exe 'vert 2resize ' . ((&columns * 90 + 61) / 122)
 argglobal
+enew
+file ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/NERD_tree_1
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -115,18 +97,10 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 17) / 34)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-17
-normal! 019l
+setlocal nofen
 lcd ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets
 wincmd w
 argglobal
-edit ~/workspace/house_in_sight/house_in_sight/app/views/apartments/index.html.erb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -144,8 +118,32 @@ normal! zt
 normal! 03l
 lcd ~/workspace/house_in_sight/house_in_sight/app/views/apartments
 wincmd w
-wincmd =
-tabnext 1
+exe 'vert 1resize ' . ((&columns * 31 + 61) / 122)
+exe 'vert 2resize ' . ((&columns * 90 + 61) / 122)
+tabedit ~/workspace/house_in_sight/house_in_sight/Gemfile
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 17) / 34)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/workspace/house_in_sight/house_in_sight
+tabnext 3
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
