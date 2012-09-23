@@ -30,6 +30,7 @@ gem 'carrierwave'
 gem 'wkhtmltopdf-binary'
 gem 'pdfkit', :git => 'git://github.com/pdfkit/pdfkit.git'
 gem 'devise'
+gem 'acts-as-taggable-on'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

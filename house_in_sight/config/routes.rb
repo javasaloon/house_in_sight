@@ -1,5 +1,6 @@
 HouseInSight::Application.routes.draw do
   devise_for :users
+  get 'tags/:tag', to: 'apartments#index', as: :tag
 
   resources :apartments
   root :to => 'apartments#index'

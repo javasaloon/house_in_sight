@@ -2,14 +2,17 @@ class ApartmentsController < ApplicationController
   # GET /apartments
   # GET /apartments.json
   def index
-    @apartments = Apartment.all
+    if params[:tag]
+      @apartments = Apartment.tagged_with(params[:tag]) 
+    else
+      @apartments = Apartment.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @apartments }
     end
   end
-
   # GET /apartments/1
   # GET /apartments/1.json
   def show
