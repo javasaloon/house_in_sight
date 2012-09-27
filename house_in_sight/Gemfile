@@ -22,7 +22,7 @@ group :assets do
   #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'bootstrap-sass', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass.git'
 end
-
+gem 'railties'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
@@ -30,7 +30,10 @@ gem 'carrierwave'
 gem 'wkhtmltopdf-binary'
 gem 'pdfkit', :git => 'git://github.com/pdfkit/pdfkit.git'
 gem 'devise'
-gem 'acts-as-taggable-on'
+#gem 'acts-as-taggable-on'
+#gem 'mongoid_taggable'
+gem 'mongoid'
+gem 'mongoid-simple-tags'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -10,7 +10,7 @@
     </p>
     <div id="tag_cloud">
       <% tag_cloud Apartment.tag_counts, %w[s m l] do |tag, css_class| %>
-        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <%= link_to tag[:name], tag_path(tag[:name]), class: css_class %>
       <% end %>
     </div>
   </form>
@@ -32,7 +32,9 @@
       <div class="span3">
         <%= link_to image_tag(apartment.image_url), apartment %>
         <p>
-          <%= raw apartment.tag_list.map { |t| link_to t,  tag_path(t)}.join(', ') %>
+        <%- if apartment.tags -%>
+          <%= raw apartment.tags.map { |t| link_to t,  tag_path(t)}.join(', ') %>
+        <%- end -%>
         </p>
       </div>
       <div class="span5">
