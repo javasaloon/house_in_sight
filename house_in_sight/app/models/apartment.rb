@@ -8,7 +8,7 @@ class Apartment
 
   attr_accessible :description, :image_url, :name, :price, :tag_list
   #acts_as_taggable
-  #mount_uploader :image_url, ImageUploader
+  mount_uploader :image_url, ImageUploader
 
   def self.tag_counts
     #Apartment.select("tags.*, count(taggings.tag_id) as count").
