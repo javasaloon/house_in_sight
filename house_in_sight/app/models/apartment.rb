@@ -6,6 +6,9 @@ class Apartment
   field :name, :type => String
   field :price, :type => String
 
+  belongs_to :district
+  has_and_belongs_to_many :subways
+
   attr_accessible :description, :image_url, :name, :price, :tag_list
   #acts_as_taggable
   mount_uploader :image_url, ImageUploader

@@ -38,6 +38,9 @@
 <h3>
   <%= @apartment.name %>
 </h3>
+<h3>
+  <%= @apartment.district.title if @apartment.district %>
+</h3>
 <p>
   <%= @apartment.description %>
 </p>

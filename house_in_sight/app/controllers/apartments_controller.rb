@@ -44,7 +44,8 @@ class ApartmentsController < ApplicationController
   # POST /apartments.json
   def create
     @apartment = Apartment.new(params[:apartment])
-
+    @apartment.district = District.where(id: params[:apartment][:district_id]).first
+    @apartment.save 
     respond_to do |format|
       if @apartment.save
         format.html { redirect_to @apartment, notice: 'Apartment was successfully created.' }
@@ -60,7 +61,8 @@ class ApartmentsController < ApplicationController
   # PUT /apartments/1.json
   def update
     @apartment = Apartment.find(params[:id])
-
+    @apartment.district = District.where(id: params[:apartment][:district_id]).first
+    @apartment.save 
     respond_to do |format|
       if @apartment.update_attributes(params[:apartment])
         format.html { redirect_to @apartment, notice: 'Apartment was successfully updated.' }

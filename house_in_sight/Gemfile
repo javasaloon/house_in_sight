@@ -33,9 +33,11 @@ gem 'devise'
 #gem 'mongoid_taggable'
 gem 'mongoid'
 gem 'bson_ext'
+gem 'bson' 
 gem 'mongoid-simple-tags'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'factory_girl_rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
