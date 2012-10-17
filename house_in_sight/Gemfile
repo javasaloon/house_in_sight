@@ -39,6 +39,11 @@ gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'factory_girl_rails'
 
+gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
+gem 'simple_form'
+
+gem 'haml' 
+gem 'haml-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
