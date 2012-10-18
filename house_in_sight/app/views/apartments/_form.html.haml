@@ -1,4 +1,4 @@
-= form_for(@apartment) do |f| 
+= simple_nested_form_for(@apartment, :html => {:class => 'form-horizontal' }) do |f| 
   = if @apartment.errors.any?  
     #error_explanation 
       %h2= pluralize(@apartment.errors.count, "error") + "prohibited this apartment from being saved:"
@@ -7,38 +7,15 @@
         = @apartment.errors.full_messages.each do |msg|  
           %li
             = msg   
-       
-  .field
-    = f.label :小区名称 
-    %br
-    = f.text_field :name 
   
-  .field
-    = f.label :区县 
-    %br
-    = f.collection_select :district_id, District.all, :id, :title 
-  
+  = f.input :name, :label => "小区名称"
+ 
+  = f.input :district_id, collection: District.all, :label => "区县"
 
-  .field
-    = f.label :描述 
-    %br
-    = f.text_area :description 
+  = f.input :description, :label => "描述"
+  = f.input :tag_list, :label => "标签 (逗号隔开，比如：\“畅销，知名品牌，打折\”)" 
+  = f.file_field :image_url, :label => "图片" 
+  = f.input :price, :label => "报价" 
   
-  .field
-    = f.label :tag_list, "标签 (逗号隔开，比如：\“畅销，知名品牌，打折\”)"  
-    %br
-    = f.text_field :tag_list 
-  
-  .field
-    = f.label :图片 
-    %br
-    = f.file_field :image_url 
-  
-  .field
-    = f.label :price 
-    %br
-    = f.text_field :price 
-  
-  .actions
-    = f.submit 
+  = f.submit "提交"
  
