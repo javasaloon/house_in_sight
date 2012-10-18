@@ -1,0 +1,61 @@
+:javascript
+  $(document).ready(function(){
+    $("#tabs").tabs();
+  });
+.search
+  %form.form-search
+    %input#search_key.span8{:name => "", :placeholder => "输入楼盘名称，地区或者街道", :type => "text"}/
+    %button.btn{:type => "submit"} 搜索
+    javascript
+    #tag_cloud
+      - tag_cloud Apartment.tag_counts, %w[s m l] do |tag, css_class|
+        = link_to tag[:name], tag_path(tag[:name]), class: css_class
+.report
+  %a.report{:href => "#"} 当前共有1000个楼盘报告.
+%ul.nav.nav-tabs
+  %li.active
+    %a{:href => "#apartment-list"} 热门楼盘
+  %li
+    %a{:href => "#tab-blog"} 看房日记
+  %li
+    %a{:href => "#tab-discount"} 打折楼盘
+  %li
+    %a{:href => "#tab-favor"} 我的收藏
+  %li
+    %a{:href => "#tab-report"} 我的报告
+#apartment-list
+  - @apartments.each do |apartment|
+    .row-fluid
+      .span3
+        = link_to image_tag(apartment.image_url), apartment
+        %p
+          - if apartment.tags
+            = raw apartment.tags.map { |t| link_to t,  tag_path(t)}.join(', ')
+      .span5
+        %ul.profile
+          %li= apartment.name
+          %li= apartment.price
+          %li= apartment.description
+        - if user_signed_in?
+          = link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'New', new_apartment_path
+  .pagination.pagination-right
+    %ul.page-numbers
+      %li
+        %a{:href => "#"} 上一页
+      %li
+        %a.current{:href => "#"} 1
+      %li
+        %a.number{:href => "#"} 2
+      %li
+        %a.number{:href => "#"} 3
+      %li
+        %a{:href => "#"} ...
+      %li
+        %a.number{:href => "#"} 99
+      %li
+        %a.number{:href => "#"} 100
+      %li
+        %a.number{:href => "#"} 101
+      %li
+        %a{:href => "#"} 下一页

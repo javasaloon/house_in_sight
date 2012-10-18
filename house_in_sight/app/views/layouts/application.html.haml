@@ -1,0 +1,72 @@
+!!!
+%html{"xmlns:wb" => "http://open.weibo.com/wb"}
+  %head
+    %title HouseInSight
+    = stylesheet_link_tag  "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %script{:charset => "utf-8", :src => "http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=", :type => "text/javascript"}
+    = yield(:head)
+  %body
+    .container-fluid
+      .row-fluid
+        #header_title.span4.offset1
+          %h3 House In Sight
+          %h4 为您提供最权威，最全面，最客观的楼盘报告
+        #header_link.span5.offset1
+          - if user_signed_in?
+            %a{:href => "#"}= current_user.email
+            %a{:href => "#"}= link_to "退出", destroy_user_session_path, :method => :delete
+          - else
+            %a{:href => "#"}= link_to "登录", new_user_session_path
+            %a{:href => "#"}= link_to "注册", new_user_registration_path
+          %a{:href => "#"} 关于我们
+          %wb:share-button{:count => "n", :relateuid => "2647082063"}
+      .row-fluid
+        .span8.offset1
+          = yield
+        .span2
+          %h4 我的标签
+          %form.form-inline
+            %input.span6{:type => "text"}/
+            %button.btn{:type => "submit"} 添加
+          %ul
+            %li
+              %span
+                %a{:href => "#"} 花园洋房
+              X 2109
+            %li
+              %span
+                %a{:href => "#"} 地铁房
+              X 2001
+          %h4 热门标签
+          %ul
+            %li
+              %span
+                %a{:href => "#"} 花园洋房
+              X 2109
+            %li
+              %span
+                %a{:href => "#"} 地铁房
+              X 2001
+            %li
+              %span
+                %a{:href => "#"} 现房
+              X 1808
+            %li
+              %span
+                %a{:href => "#"} 品牌开发商
+              X 1206
+            %li
+              %span
+                %a{:href => "#"} 打折楼盘
+              X 1002
+          %p/
+          %a{:href => "#"}
+            %img{:alt => "", :src => "/ads/ads1.jpeg"}/
+          %p/
+          %a{:href => "#"}
+            %img{:alt => "", :src => "/ads/ads2.jpeg"}/
+      %p/
+      .row-fluid
+        .span10.offset1 Copyright 2012 by HouseInSight.
