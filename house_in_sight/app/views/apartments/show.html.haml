@@ -32,18 +32,10 @@
   });
 
 
-%h3
-  = @apartment.name 
-
-%h3
-  = @apartment.district.title if @apartment.district 
- 
-%p
-  = @apartment.description 
-
-%p
-  %b Price: 
-  = @apartment.price 
+%h3= @apartment.name 
+%h3= @apartment.district.title if @apartment.district 
+%p= @apartment.description 
+%p= @apartment.price 
 
 = link_to 'Edit', edit_apartment_path(@apartment)  
 = link_to 'List', apartments_path 

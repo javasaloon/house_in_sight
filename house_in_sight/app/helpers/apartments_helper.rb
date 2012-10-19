@@ -6,4 +6,5 @@ module ApartmentsHelper
       yield(tag, classes[index.round])
     end
   end
+   
 end
