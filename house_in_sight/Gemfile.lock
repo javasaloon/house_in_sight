@@ -161,6 +161,9 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    wicked (0.2.0)
+      activesupport (>= 3.0.7)
+      rails (>= 3.0.7)
     wkhtmltopdf-binary (0.9.9.1)
 
 PLATFORMS
@@ -189,4 +192,5 @@ DEPENDENCIES
   simple_form
   sqlite3
   uglifier (>= 1.0.3)
+  wicked
   wkhtmltopdf-binary

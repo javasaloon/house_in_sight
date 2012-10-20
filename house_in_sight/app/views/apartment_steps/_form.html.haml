@@ -1,0 +1,21 @@
+= simple_nested_form_for @apartment, :html => {:class => 'form-horizontal' }, :url => wizard_path, :method => :put do |f| 
+
+  = yield f  
+  
+  = hidden_field_tag :apartment_id,  @apartment.id 
+
+  - case step
+  - when :basic 
+    .pull-right
+      = f.submit "下一步", {:class => 'btn' }
+  - when :fee
+    .pull-right
+      = link_to "上一步", previous_wizard_path, :class => "btn" 
+      = f.submit "完成", {:class => 'btn' }
+  - else 
+    .pull-right
+      = link_to "上一步", previous_wizard_path, :class => "btn"  
+      = f.submit "下一步", {:class => 'btn' }
+
+
+  

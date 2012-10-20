@@ -1,0 +1,8 @@
+%h1 楼层信息 
+
+= render layout: 'form' do |f| 
+  = f.input :floor, :label => "楼层:" 
+  = f.input :floor_total, :label => "总高:"
+  = f.input :bedroom_count, :label => "卧室:", :collection => 1..4, :as => :radio_buttons, :item_wrapper_class => 'inline' 
+  = f.input :livingroom_count, :label => "厅:", :collection => 1..2, :as => :radio_buttons, :item_wrapper_class => 'inline' 
+  = f.input :washroom_count, :label => "卫生间:", :collection => 1..2, :as => :radio_buttons, :item_wrapper_class => 'inline' 

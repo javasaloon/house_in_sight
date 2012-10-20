@@ -1,4 +1,5 @@
 class ApartmentsController < ApplicationController
+
   # GET /apartments
   # GET /apartments.json
   def index
@@ -26,54 +27,17 @@ class ApartmentsController < ApplicationController
 
   # GET /apartments/new
   # GET /apartments/new.json
-  def new
-    @apartment = Apartment.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @apartment }
-    end
+  def new 
+    redirect_to apartment_steps_path 
   end
 
   # GET /apartments/1/edit
   def edit
-    @apartment = Apartment.find(params[:id])
-  end
-
-  # POST /apartments
-  # POST /apartments.json
-  def create
-    @apartment = Apartment.new(params[:apartment])
-    @apartment.district = District.where(id: params[:apartment][:district_id]).first
-    @apartment.save 
-    respond_to do |format|
-      if @apartment.save
-        format.html { redirect_to @apartment, notice: 'Apartment was successfully created.' }
-        format.json { render json: @apartment, status: :created, location: @apartment }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @apartment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /apartments/1
-  # PUT /apartments/1.json
-  def update
-    @apartment = Apartment.find(params[:id])
-    @apartment.district = District.where(id: params[:apartment][:district_id]).first
-    @apartment.save 
-    respond_to do |format|
-      if @apartment.update_attributes(params[:apartment])
-        format.html { redirect_to @apartment, notice: 'Apartment was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @apartment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
+    #@apartment = Apartment.find(params[:id])
+    session[:current_apartment_id] = params[:id]
+    redirect_to apartment_steps_path 
+  end 
+  
   # DELETE /apartments/1
   # DELETE /apartments/1.json
   def destroy

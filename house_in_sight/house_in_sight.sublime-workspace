@@ -7,16 +7,144 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 1426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/apartments/index.html.haml",
+			"settings":
+			{
+				"buffer_size": 1685,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/apartments/edit.html.haml",
+			"settings":
+			{
+				"buffer_size": 98,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/application.html.haml",
+			"settings":
+			{
+				"buffer_size": 2150,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/apartments/new.html.haml",
+			"settings":
+			{
+				"buffer_size": 66,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/apartment.rb",
+			"settings":
+			{
+				"buffer_size": 1110,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/apartments/_form.html.haml",
+			"settings":
+			{
+				"buffer_size": 1281,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/apartments/show.html.haml",
+			"settings":
+			{
+				"buffer_size": 1086,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 360.0,
+		"height": 87.0,
 		"selected_items":
 		[
 			[
+				"gitpus",
+				"Git: Push"
+			],
+			[
+				"git s",
+				"Git: Status"
+			],
+			[
+				"gitc",
+				"Git: Commit"
+			],
+			[
+				"gitadd",
+				"Git: Add..."
+			],
+			[
+				"gits",
+				"Git: Status"
+			],
+			[
+				"git add.",
+				"Git: Add..."
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"form",
+				"Format: Ruby"
+			],
+			[
 				"pci",
 				"Package Control: Install Package"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"set sh",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"con",
+				"HTML2Haml: Convert selection"
+			],
+			[
+				"con ",
+				"HTML2Haml: Convert clipboard content"
+			],
+			[
+				"set r h",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"set s ham",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"erbt",
+				"HTML2Haml: Convert clipboard content"
 			],
 			[
 				"cpi",
@@ -47,7 +175,7 @@
 				"Set Syntax: Ruby"
 			]
 		],
-		"width": 449.0
+		"width": 530.0
 	},
 	"console":
 	{
@@ -64,7 +192,12 @@
 	},
 	"file_history":
 	[
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/new.html.haml"
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/helpers/apartments_helper.rb",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/config/initializers/simple_form_bootstrap.rb",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/new.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/models/district.rb",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/assets/javascripts/nested_form.js",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/public/javascripts/nested_form.js"
 	],
 	"find":
 	{
@@ -82,6 +215,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\"\"",
+			"Boolean",
+			"Integer",
+			"type",
+			":type => Integer",
+			"String",
+			"field",
+			"label_method",
+			" :",
+			"text_field",
+			".field",
+			"br",
+			"  \n",
+			"/ ",
 			"<%",
 			"<p>",
 			"%>",
@@ -98,6 +245,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"input",
 			"",
 			"%p",
 			"",
@@ -114,8 +262,235 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 1426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1296,
+								1296
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/apartments/index.html.haml",
+					"settings":
+					{
+						"buffer_size": 1685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1391,
+								1391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/apartments/edit.html.haml",
+					"settings":
+					{
+						"buffer_size": 98,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/layouts/application.html.haml",
+					"settings":
+					{
+						"buffer_size": 2150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/apartments/new.html.haml",
+					"settings":
+					{
+						"buffer_size": 66,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/models/apartment.rb",
+					"settings":
+					{
+						"buffer_size": 1110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								422,
+								422
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 212.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "app/views/apartments/_form.html.haml",
+					"settings":
+					{
+						"buffer_size": 1281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								604,
+								604
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/apartments/show.html.haml",
+					"settings":
+					{
+						"buffer_size": 1086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								846,
+								846
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 511.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -136,11 +511,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.56796875,
 			1.0
 		],
 		"rows":
@@ -150,6 +532,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.git":
+	{
+		"height": 136.0
+	},
 	"replace":
 	{
 		"height": 64.0
@@ -160,6 +546,38 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"ap",
+				"app/helpers/apartments_helper.rb"
+			],
+			[
+				"apar",
+				"app/models/apartment.rb"
+			],
+			[
+				"edi",
+				"app/views/apartments/edit.html.haml"
+			],
+			[
+				"new",
+				"app/views/apartments/new.html.haml"
+			],
+			[
+				"dis",
+				"app/models/district.rb"
+			],
+			[
+				"inde",
+				"app/views/apartments/index.html.haml"
+			],
+			[
+				"sho",
+				"app/views/apartments/show.html.haml"
+			],
+			[
+				"gem",
+				"Gemfile"
+			]
 		],
 		"width": 0.0
 	},
@@ -171,10 +589,10 @@
 		],
 		"width": 0.0
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 236.0,
 	"status_bar_visible": true
 }

@@ -4,6 +4,7 @@ HouseInSight::Application.routes.draw do
   get 'tags/:tag', to: 'apartments#index', as: :tag
 
   resources :apartments
+  resources :apartment_steps
   root :to => 'apartments#index'
 
   # The priority is based upon order of creation:

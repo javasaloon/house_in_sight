@@ -1,0 +1,8 @@
+%h1 房屋价格
+
+= render layout: 'form' do |f| 
+  = f.input :age, :label => "年代:", :collection => 1980..2012, :include_blank => false
+  = f.input :build_type, :label => "类型:", :collection => {:动迁房=>:dqf, :商品房=>:spf}, :as => :radio_buttons, :item_wrapper_class => 'inline'
+  = f.input :new_build, :label => "新房:", :as => :boolean 
+  = f.input :five_years, :label => "满五年:", :as => :boolean
+  = f.input :only, :label => "唯一:", :as => :boolean

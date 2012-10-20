@@ -1,11 +1,11 @@
-= simple_nested_form_for(@apartment, :html => {:class => 'form-horizontal' }) do |f| 
-  /= f.error_messages 
+%h1 基本信息 
+
+= render layout: 'form' do |f| 
   = f.input :name, :label => "小区名称:"
   = f.association :district, collection: District.all, :label_method => :title, :value_method => :id, :label => "区县:", :include_blank => false
   = f.input :description, :label => "描述:"
   = f.input :tag_list, :label => "标签:", :hint => "(逗号隔开，比如：\“畅销，知名品牌，打折\”)" 
   = f.file_field :image_url, :label => "图片:" 
   = f.input :price, :label => "报价:" 
-  
-  = f.submit "提交"
- 
+
+   
