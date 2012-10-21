@@ -13,30 +13,31 @@
   %a.report{:href => "#"} 当前共有1000个楼盘报告.
 %ul.nav.nav-tabs
   %li.active
-    %a{:href => "#apartment-list"} 热门楼盘
-  %li
-    %a{:href => "#tab-blog"} 看房日记
-  %li
-    %a{:href => "#tab-discount"} 打折楼盘
+    %a{:href => "#apartment-list"} 热门博客
   %li
     %a{:href => "#tab-favor"} 我的收藏
   %li
-    %a{:href => "#tab-report"} 我的报告
+    %a{:href => "#tab-report"} 我的博客
 #apartment-list
   - @apartments.each do |apartment|
-    .row-fluid
-      .span3
+    .row-fluid 
+      .span2  
         = link_to image_tag(apartment.image_url), apartment
-        %p
-          - if apartment.tags
-            = raw apartment.tags.map { |t| link_to t,  tag_path(t)}.join(', ')
-      .span5
-        %ul.profile
+      .span2 
+        - if apartment.tags
+          %i.icon-heart.red
+          = raw apartment.tags.map { |t| link_to t,  tag_path(t)}.join(', ')
+      .span3  
+        %ul.unstyled
           %li= apartment.name
+          %li= apartment.layout
+          %li= apartment.floor_info
           %li= apartment.price
-          %li= apartment.description
+          %li= localize apartment.modified, :format => '%H:%M %m/%d/%Y'
+      .span1 
         - if user_signed_in?
           = link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+          %br
           = link_to 'New', new_apartment_path
   .pagination.pagination-right
     %ul.page-numbers

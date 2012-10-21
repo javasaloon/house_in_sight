@@ -1,9 +1,11 @@
+# encoding: utf-8
 class Apartment 
   include Mongoid::Document
   include Mongoid::Document::Taggable
-  field :created, type: DateTime
-  field :modified, :type => DateTime
-  before_save :setDates
+  field :created, type: DateTime, default: -> { DateTime.current  }
+  field :modified, :type => DateTime, default: -> { DateTime.current  }
+  before_save :setModified
+   
 
   field :description, :type => String
   field :image_url, :type => String
@@ -36,18 +38,20 @@ class Apartment
   #acts_as_taggable
   mount_uploader :image_url, ImageUploader
 
+  def layout
+    "#{self.bedroom_count} 室 #{self.livingroom_count} 厅 #{self.washroom_count} 卫"
+  end
+  def floor_info
+    "#{self.floor} / #{self.floor_total} 楼"
+  end
   def self.tag_counts
     #Apartment.select("tags.*, count(taggings.tag_id) as count").
       #joins(:taggings).group("taggings.tag_id")
     [{ :name=> 'tag', :count => 1 }]
   end
 
-  def setDates
-    if new_record?
-        @created = DateTime.current
-    elsif changed?
-        @modified = DateTime.current
-    end
-    
+  def setModified 
+    self.modified = DateTime.current 
   end
+   
 end
