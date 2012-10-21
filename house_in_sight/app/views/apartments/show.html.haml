@@ -32,20 +32,38 @@
   });
 
 
-%h3= @apartment.name 
-%h3= @apartment.district.title if @apartment.district 
-%p= @apartment.description 
-%p= @apartment.price 
+%ul.nav.nav-tabs
+  %li.active
+    %a{:href => "#basic", "data-toggle"=>"tab"} 基本信息
+  %li
+    %a{:href => "#fee", "data-toggle"=>"tab"} 房价
+  %li
+    %a{:href => "#build", "data-toggle"=>"tab"} 图片
+ 
 
-= link_to 'Edit', edit_apartment_path(@apartment)  
-= link_to 'List', apartments_path 
+.pull-right
+  = link_to '编辑', edit_apartment_path(@apartment)  
+  = link_to '列表', apartments_path 
+.tab-content
+  %div#basic.tab-pane.active
+    %h3= @apartment.name 
+    %h3= @apartment.district.title if @apartment.district 
+    %p= @apartment.description 
+    %p= @apartment.price 
+    %p= "楼层: #{@apartment.floor} / #{@apartment.floor_total} 楼"
+    %p= "#{@apartment.bedroom_count} 室 #{@apartment.livingroom_count} 厅 #{@apartment.washroom_count} 卫"
+    %p= "#{@apartment.modified}, #{@apartment.created}"
+    #house-map.span10 
+     
+  %div#fee.tab-pane
+    %p= "年代: #{@apartment.age}"
+    %p= "类型: #{@apartment.build_type}"
+    %p= "满5年(无营业税): #{ @apartment.five_years ? '是' : '否'}"
+    %p= "唯一(无个税): #{@apartment.only ? '是' : '否'}"
+ 
+  %div#build.tab-pane
+    .house-photo
+      = image_tag(@apartment.image_url) 
+  
+ 
 
-%share-button{ count: "n", relateuid: "2647082063" }
-
-
-.house-photo
-  = image_tag(@apartment.image_url) 
-
-%p
-
-#house-map.span10 

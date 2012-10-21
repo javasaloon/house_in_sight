@@ -6,7 +6,7 @@ class ApartmentsController < ApplicationController
     if params[:tag]
       @apartments = Apartment.tagged_with(params[:tag]) 
     else
-      @apartments = Apartment.all
+      @apartments = Apartment.all.order_by([:modified, :desc])
     end
 
     respond_to do |format|
