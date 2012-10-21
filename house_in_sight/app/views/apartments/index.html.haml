@@ -25,16 +25,21 @@
         = link_to image_tag(apartment.image_url), apartment
       .span2 
         - if apartment.tags
-          %i.icon-heart.red
-          = raw apartment.tags.map { |t| link_to t,  tag_path(t)}.join(', ')
+          - raw apartment.tags.map { |t| link_to t,  tag_path(t)}.each do |e|
+            = e 
+            %br
       .span3  
         %ul.unstyled
           %li= apartment.name
           %li= apartment.layout
           %li= apartment.floor_info
-          %li= apartment.price
-          %li= localize apartment.modified, :format => '%H:%M %m/%d/%Y'
-      .span1 
+          %li= apartment.road_info
+          %li= apartment.price_info
+          %li
+            %p
+              %i.muted= apartment.update_info
+      .span1.offset3
+        %i.icon-heart.icon-large.red 100
         - if user_signed_in?
           = link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' }
           %br
