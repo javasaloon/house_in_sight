@@ -19,31 +19,45 @@
   %li
     %a{:href => "#tab-report"} 我的博客
 #apartment-list
-  - @apartments.each do |apartment|
-    .row-fluid 
-      .span2  
-        = link_to image_tag(apartment.image_url), apartment
-      .span2 
-        - if apartment.tags
-          - raw apartment.tags.map { |t| link_to t,  tag_path(t)}.each do |e|
-            = e 
-            %br
-      .span3  
-        %ul.unstyled
-          %li= apartment.name
-          %li= apartment.layout
-          %li= apartment.floor_info
-          %li= apartment.road_info
-          %li= apartment.price_info
-          %li
-            %p
-              %i.muted= apartment.update_info
-      .span1.offset3
-        %i.icon-heart.icon-large.red 100
-        - if user_signed_in?
-          = link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-          %br
-          = link_to 'New', new_apartment_path
+  %table.table.table-striped
+    %tbody
+    - @apartments.each do |apartment|
+      %tr
+        %td
+          .row-fluid 
+            .span2  
+              = link_to image_tag(apartment.image_url), apartment
+            .span2 
+              - if apartment.tags
+                - raw apartment.tags.map { |t| link_to t,  tag_path(t)}.each do |e|
+                  = e 
+                  %br
+            .span3  
+              %ul.unstyled
+                %li= apartment.name
+                %li
+                  = apartment.layout
+                  = apartment.floor_info
+                %li= apartment.road_info
+                %li= apartment.age
+                
+                %li
+                  %p
+                    %i.muted= apartment.update_info
+            .span2
+              = apartment.area.to_s + " 平米"
+            .span2
+              %strong= apartment.price_info
+
+            .span1.offset4
+              - if user_signed_in?
+                = link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+                %br
+                = link_to 'New', new_apartment_path
+                %br
+              %i.icon-heart.icon-large.red 100
+    %tr
+      %td
   .pagination.pagination-right
     %ul.page-numbers
       %li

@@ -1,9 +1,7 @@
 = simple_nested_form_for @apartment, :html => {:class => 'form-horizontal' }, :url => wizard_path, :method => :put do |f| 
 
   = yield f  
-  
-  = hidden_field_tag :apartment_id,  @apartment.id 
-
+   
   - case step
   - when :basic 
     .pull-right

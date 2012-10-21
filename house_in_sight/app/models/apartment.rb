@@ -22,6 +22,7 @@ class Apartment
   field :bedroom_count, :type => Integer
   field :livingroom_count, :type => Integer
   field :washroom_count, :type => Integer
+  field :area, :type => Float
 
   field :age, :type => Integer
   field :build_type, :type => String
@@ -35,13 +36,13 @@ class Apartment
   attr_accessible :id, :description, :image_url, :name, :price, :tag_list,
   :floor, :floor_total, :bedroom_count, :livingroom_count, :washroom_count, 
   :age, :build_type, :new_build, :five_years, :only, :district_id, :created,
-  :modified, :road
+  :modified, :road, :area
   
   #acts_as_taggable
   mount_uploader :image_url, ImageUploader
 
   def layout
-    "#{self.bedroom_count} 室 #{self.livingroom_count} 厅 #{self.washroom_count} 卫"
+    "#{self.bedroom_count}室#{self.livingroom_count}厅#{self.washroom_count}卫"
   end
   def road_info
     if self.road
@@ -51,24 +52,24 @@ class Apartment
     end
   end
   def price_info
-    (self.price/10000).round.to_s + " 万" 
+    (self.price/10000).round.to_s + "万" 
   end
   def update_info
     diff = DateTime.current.to_time() - self.modified.to_time()   
     time = nil
     day = diff / (3600 * 24)
     if day > 1
-      time = day.round().to_s + " 天" 
+      time = day.round().to_s + "天" 
     else
       hour = diff / 3600
         if hour > 1
-          time = hour.round().to_s + " 小时"
+          time = hour.round().to_s + "小时"
         else
           minute = diff / 60
           if minute > 1
-            time = minute.round().to_s + " 分钟"
+            time = minute.round().to_s + "分钟"
           else
-            time = diff.round().to_s + " 秒"
+            time = diff.round().to_s + "秒"
           end
         end
     end
@@ -76,7 +77,7 @@ class Apartment
   end
 
   def floor_info
-    "#{self.floor} / #{self.floor_total} 楼"
+    "#{self.floor}/#{self.floor_total}层"
   end
   def self.tag_counts
     #Apartment.select("tags.*, count(taggings.tag_id) as count").
