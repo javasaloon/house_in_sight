@@ -1,6 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
-@import "compass";
+@import "compass/typography/lists/horizontal-list";
 @import "apartments";
 
 #header_link {
@@ -11,5 +11,10 @@
   border-bottom: 1px dotted #bcb6fd;
   margin-bottom: 1em;
 }
+ul.horizontal {
+  @include horizontal-list;
+}
+
+
  
 

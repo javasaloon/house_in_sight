@@ -20,7 +20,17 @@
     %a{:href => "#tab-report"} 我的博客
 #apartment-list
   - @apartments.each do |apartment|
-    .row-fluid.dash-line
+    .row-fluid
+      .span1
+        %ul.unstyled
+          %li=100.to_s
+          %li
+            %i.icon-hand-up.icon-large.red 
+          %li
+            %br
+          %li=20.to_s
+          %li
+            %i.icon-hand-down.icon-large.gray
       .span2  
         = link_to image_tag(apartment.image_url), apartment
       .span2 
@@ -37,21 +47,22 @@
           %li= apartment.road_info
           %li= apartment.age
           
-          %li
-            %p
-              %i.muted= apartment.update_info
       .span2
         = apartment.area.to_s + " 平米"
-      .span2
+      .span1
         %strong= apartment.price_info
-
-      .span1.offset4
-        - if user_signed_in?
-          = link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-          %br
-          = link_to 'New', new_apartment_path
-          %br
-        %i.icon-heart.icon-large.red 100
+    .row-fluid.dash-line
+      .span9.offset4  
+        %ul.horizontal
+          %li
+            %i.muted= apartment.update_info
+          - if user_signed_in?
+            %li= link_to '真实(5)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+            %li= link_to '虚假(1)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+            %li= link_to '已卖(12)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+            %li= link_to '添加相似(125)', new_apartment_path 
+            %li= link_to '收藏(25)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+            %li= link_to '删除', apartment, method: :delete, data: { confirm: 'Are you sure?' }
      
   .pagination.pagination-right
     %ul.page-numbers
