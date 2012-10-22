@@ -6,6 +6,10 @@
   = f.input :description, :label => "描述:"
   = f.input :tag_list, :label => "标签:", :hint => "逗号隔开，比如：“畅销，知名品牌，打折”" 
   = f.file_field :image_url, :label => "图片:" 
-  = f.input :price, :label => "报价:", :input_html => {:maxlength => 10}
-  = f.input :area, :label => "面积"
+  = f.input :price, :label => "报价:", :input_html => {:maxlength => 10}, :wrapper => :append do
+    =f.input_field :price
+    =content_tag :span, '万元', :class => "add-on" 
+  = f.input :area, :label => "面积", :wrapper => :append do
+    =f.input_field :area
+    =content_tag :span, '平米', :class => "add-on" 
    

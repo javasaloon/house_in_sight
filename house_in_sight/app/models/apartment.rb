@@ -52,7 +52,7 @@ class Apartment
     end
   end
   def price_info
-    (self.price/10000).round.to_s + "万" 
+    self.price.to_s + "万" 
   end
   def update_info
     diff = DateTime.current.to_time() - self.modified.to_time()   
