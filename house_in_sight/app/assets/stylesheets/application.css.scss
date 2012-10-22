@@ -1,10 +1,15 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "compass";
 @import "apartments";
 
 #header_link {
   text-align: right;
   /*background: red;*/
+}
+.dash-line {
+  border-bottom: 1px dotted #bcb6fd;
+  margin-bottom: 1em;
 }
  
 

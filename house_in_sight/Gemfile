@@ -22,6 +22,7 @@ group :assets do
   #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'bootstrap-sass', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass.git'
   gem 'font-awesome-sass-rails'
+  gem 'compass-rails'
 end
 gem 'railties'
 gem 'jquery-rails'
