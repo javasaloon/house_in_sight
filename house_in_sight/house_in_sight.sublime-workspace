@@ -39,7 +39,7 @@
 			"file": "app/views/apartments/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 1995,
+				"buffer_size": 2579,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,15 +47,23 @@
 			"file": "app/assets/stylesheets/application.css.scss",
 			"settings":
 			{
-				"buffer_size": 169,
+				"buffer_size": 306,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/apartment_steps/_form.html.haml",
+			"file": "app/models/apartment.rb",
 			"settings":
 			{
-				"buffer_size": 502,
+				"buffer_size": 2301,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/apartments.css.scss",
+			"settings":
+			{
+				"buffer_size": 374,
 				"line_ending": "Unix"
 			}
 		}
@@ -63,16 +71,24 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 87.0,
 		"selected_items":
 		[
 			[
-				"pci",
-				"Package Control: Install Package"
-			],
-			[
 				"gitpush",
 				"Git: Push"
+			],
+			[
+				"gitcom",
+				"Git: Commit"
+			],
+			[
+				"gitad",
+				"Git: Add..."
+			],
+			[
+				"gits",
+				"Git: Status"
 			],
 			[
 				"gitco",
@@ -83,12 +99,20 @@
 				"Git: Add..."
 			],
 			[
-				"gits",
-				"Git: Status"
+				"marg",
+				"Snippet: margin"
 			],
 			[
-				"gitad",
-				"Git: Add..."
+				"border",
+				"Snippet: border-bottom+"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"border-bo",
+				"Snippet: border-bottom+"
 			],
 			[
 				"git push",
@@ -179,7 +203,7 @@
 				"Set Syntax: Ruby"
 			]
 		],
-		"width": 544.0
+		"width": 593.0
 	},
 	"console":
 	{
@@ -196,6 +220,10 @@
 	},
 	"file_history":
 	[
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/controllers/apartments_controller.rb",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/basic.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/fee.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/_form.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/Gemfile",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/config/initializers/simple_form_bootstrap.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/config/initializers/simple_form.rb",
@@ -206,13 +234,9 @@
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/application.css.scss",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/scaffolds.css.scss",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/building.html.haml",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/basic.html.haml",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/fee.html.haml",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/controllers/apartments_controller.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/show.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/index.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/helpers/apartments_helper.rb",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/_form.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/controllers/apartment_steps_controller.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/models/base.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/_form.html.haml",
@@ -240,6 +264,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"            %",
 			" ",
 			"\n    ",
 			"    \n",
@@ -299,7 +324,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -307,15 +332,15 @@
 					"file": "app/views/apartments/index.html.haml",
 					"settings":
 					{
-						"buffer_size": 1995,
+						"buffer_size": 2579,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								653,
-								663
+								2329,
+								2329
 							]
 						],
 						"settings":
@@ -325,7 +350,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 241.0,
+						"translation.y": 1098.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -335,15 +360,15 @@
 					"file": "app/assets/stylesheets/application.css.scss",
 					"settings":
 					{
-						"buffer_size": 169,
+						"buffer_size": 306,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								163,
-								163
+								254,
+								254
 							]
 						],
 						"settings":
@@ -355,34 +380,54 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 2,
-					"file": "app/views/apartment_steps/_form.html.haml",
+					"file": "app/models/apartment.rb",
 					"settings":
 					{
-						"buffer_size": 502,
+						"buffer_size": 2301,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								63,
-								73
+								1410,
+								1410
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 854.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/stylesheets/apartments.css.scss",
+					"settings":
+					{
+						"buffer_size": 374,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								371
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -410,18 +455,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.687088407058,
 			1.0
 		],
 		"rows":
@@ -446,6 +484,22 @@
 		"selected_items":
 		[
 			[
+				"apart",
+				"app/assets/stylesheets/apartments.css.scss"
+			],
+			[
+				"apar",
+				"app/models/apartment.rb"
+			],
+			[
+				"basi",
+				"app/views/apartment_steps/basic.html.haml"
+			],
+			[
+				"fee",
+				"app/views/apartment_steps/fee.html.haml"
+			],
+			[
 				"for",
 				"app/views/apartment_steps/_form.html.haml"
 			],
@@ -458,24 +512,12 @@
 				"app/views/layouts/application.html.haml"
 			],
 			[
-				"apar",
-				"app/models/apartment.rb"
-			],
-			[
-				"apart",
-				"app/controllers/apartments_controller.rb"
-			],
-			[
 				"in",
 				"app/views/apartments/index.html.haml"
 			],
 			[
 				"show",
 				"app/views/apartments/show.html.haml"
-			],
-			[
-				"basi",
-				"app/views/apartment_steps/basic.html.haml"
 			],
 			[
 				"bui",
@@ -496,10 +538,6 @@
 			[
 				"inde",
 				"app/views/apartments/index.html.haml"
-			],
-			[
-				"fee",
-				"app/views/apartment_steps/fee.html.haml"
 			],
 			[
 				"basic",

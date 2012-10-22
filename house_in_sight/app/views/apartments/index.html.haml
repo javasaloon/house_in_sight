@@ -33,29 +33,28 @@
             %i.icon-hand-down.icon-large.gray
       .span2  
         = link_to image_tag(apartment.image_url), apartment
-      .span2 
-        - if apartment.tags
-          - raw apartment.tags.map { |t| link_to t,  tag_path(t)}.each do |e|
-            = e 
-            %br
-      .span3  
+      .span4  
         %ul.unstyled
           %li= apartment.name
           %li
             = apartment.layout
             = apartment.floor_info
           %li= apartment.road_info
-          %li= apartment.age
-          
+          %li= apartment.age.to_s + " 年"
       .span2
         = apartment.area.to_s + " 平米"
       .span1
         %strong= apartment.price_info
+      .span2 
+        - if apartment.tags
+          %ul.unstyled
+            - raw apartment.tags.map { |t| link_to t,  tag_path(t)}.each do |e|
+              %li= e 
     .row-fluid.dash-line
-      .span9.offset4  
+      .span2.offset1
+        %i.muted= apartment.update_info
+      .span6.offset2
         %ul.horizontal
-          %li
-            %i.muted= apartment.update_info
           - if user_signed_in?
             %li= link_to '真实(5)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
             %li= link_to '虚假(1)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
