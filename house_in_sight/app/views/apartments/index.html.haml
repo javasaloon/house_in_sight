@@ -1,85 +1,64 @@
-:javascript
-  $(document).ready(function(){
-    $("#tabs").tabs();
-  });
-.search
-  %form.form-search
-    %input#search_key.span8{:name => "", :placeholder => "输入楼盘名称，地区或者街道", :type => "text"}/
-    %button.btn{:type => "submit"} 搜索
-    #tag_cloud
-      - tag_cloud Apartment.tag_counts, %w[s m l] do |tag, css_class|
-        = link_to tag[:name], tag_path(tag[:name]), class: css_class
-.report
-  %a.report{:href => "#"} 当前共有1000个楼盘报告.
-%ul.nav.nav-tabs
-  %li.active
-    %a{:href => "#apartment-list"} 热门博客
-  %li
-    %a{:href => "#tab-favor"} 我的收藏
-  %li
-    %a{:href => "#tab-report"} 我的博客
-#apartment-list
-  - @apartments.each do |apartment|
-    .row-fluid
-      .span1
+- @apartments.each do |apartment|
+  .row-fluid
+    .span1
+      %ul.unstyled
+        %li=100.to_s
+        %li
+          %i.icon-hand-up.icon-large.red 
+        %li
+          %br
+        %li=20.to_s
+        %li
+          %i.icon-hand-down.icon-large.gray
+    .span2  
+      = link_to image_tag(apartment.image_url), apartment
+    .span4  
+      %ul.unstyled
+        %li= apartment.name
+        %li
+          = apartment.layout
+          = apartment.floor_info
+        %li= apartment.road_info
+        %li= apartment.age.to_s + " 年"
+    .span2
+      = apartment.area.to_s + " 平米"
+    .span1
+      %strong= apartment.price_info
+    .span2 
+      - if apartment.tags
         %ul.unstyled
-          %li=100.to_s
-          %li
-            %i.icon-hand-up.icon-large.red 
-          %li
-            %br
-          %li=20.to_s
-          %li
-            %i.icon-hand-down.icon-large.gray
-      .span2  
-        = link_to image_tag(apartment.image_url), apartment
-      .span4  
-        %ul.unstyled
-          %li= apartment.name
-          %li
-            = apartment.layout
-            = apartment.floor_info
-          %li= apartment.road_info
-          %li= apartment.age.to_s + " 年"
-      .span2
-        = apartment.area.to_s + " 平米"
-      .span1
-        %strong= apartment.price_info
-      .span2 
-        - if apartment.tags
-          %ul.unstyled
-            - raw apartment.tags.map { |t| link_to t,  tag_path(t)}.each do |e|
-              %li= e 
-    .row-fluid.dash-line
-      .span2.offset1
-        %i.muted= apartment.update_info
-      .span6.offset2
-        %ul.horizontal
-          - if user_signed_in?
-            %li= link_to '真实(5)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-            %li= link_to '虚假(1)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-            %li= link_to '已卖(12)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-            %li= link_to '添加相似(125)', new_apartment_path 
-            %li= link_to '收藏(25)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-            %li= link_to '删除', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-     
-  .pagination.pagination-right
-    %ul.page-numbers
-      %li
-        %a{:href => "#"} 上一页
-      %li
-        %a.current{:href => "#"} 1
-      %li
-        %a.number{:href => "#"} 2
-      %li
-        %a.number{:href => "#"} 3
-      %li
-        %a{:href => "#"} ...
-      %li
-        %a.number{:href => "#"} 99
-      %li
-        %a.number{:href => "#"} 100
-      %li
-        %a.number{:href => "#"} 101
-      %li
-        %a{:href => "#"} 下一页
+          - raw apartment.tags.map { |t| link_to t,  tag_path(t)}.each do |e|
+            %li= e 
+  .row-fluid.dash-line
+    .span2.offset1
+      %i.muted= apartment.update_info
+    .span6.offset2
+      %ul.horizontal
+        - if user_signed_in?
+          %li= link_to '真实(5)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+          %li= link_to '虚假(1)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+          %li= link_to '已卖(12)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+          %li= link_to '添加相似(125)', new_apartment_path 
+          %li= link_to '收藏(25)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+          %li= link_to '删除', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+   
+.pagination.pagination-right
+  %ul.page-numbers
+    %li
+      %a{:href => "#"} 上一页
+    %li
+      %a.current{:href => "#"} 1
+    %li
+      %a.number{:href => "#"} 2
+    %li
+      %a.number{:href => "#"} 3
+    %li
+      %a{:href => "#"} ...
+    %li
+      %a.number{:href => "#"} 99
+    %li
+      %a.number{:href => "#"} 100
+    %li
+      %a.number{:href => "#"} 101
+    %li
+      %a{:href => "#"} 下一页

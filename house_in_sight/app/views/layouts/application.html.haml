@@ -1,72 +1,67 @@
 !!!
 %html{"xmlns:wb" => "http://open.weibo.com/wb"}
   %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+
     %title 房产博客
     = stylesheet_link_tag  "application", :media => "all"
     = javascript_include_tag "application"
-    = csrf_meta_tags
+    = csrf_meta_tags 
+
     %script{:charset => "utf-8", :src => "http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=", :type => "text/javascript"}
     = yield(:head)
-  %body
-    .container-fluid
-      .row-fluid
-        #header_title.span4.offset1
-          %h3 房产博客
-          %h4 记录与分享您的买房历程
-        #header_link.span5.offset1
-          - if user_signed_in?
-            %a{:href => "#"}= current_user.email
-            %a{:href => "#"}= link_to "退出", destroy_user_session_path, :method => :delete
-          - else
-            %a{:href => "#"}= link_to "登录", new_user_session_path
-            %a{:href => "#"}= link_to "注册", new_user_registration_path
-          %a{:href => "#"} 关于我们
-          %wb:share-button{:count => "n", :relateuid => "2647082063"}
-      .row-fluid
-        .span8.offset1
-          = yield
-        .span2
-          %h4 我的标签
-          %form.form-inline
-            %input.span6{:type => "text"}/
-            %button.btn{:type => "submit"} 添加
-          %ul
-            %li
-              %span
-                %a{:href => "#"} 花园洋房
-              X 2109
-            %li
-              %span
-                %a{:href => "#"} 地铁房
-              X 2001
-          %h4 热门标签
-          %ul
-            %li
-              %span
-                %a{:href => "#"} 花园洋房
-              X 2109
-            %li
-              %span
-                %a{:href => "#"} 地铁房
-              X 2001
-            %li
-              %span
-                %a{:href => "#"} 现房
-              X 1808
-            %li
-              %span
-                %a{:href => "#"} 品牌开发商
-              X 1206
-            %li
-              %span
-                %a{:href => "#"} 打折楼盘
-              X 1002
-          %p/
-          %a{:href => "#"}
-            %img{:alt => "", :src => "/ads/ads1.jpeg"}/
-          %p/
-          %a{:href => "#"}
-            %img{:alt => "", :src => "/ads/ads2.jpeg"}/
-      %p/
-      .row-fluid
-        .span10.offset1 Copyright 2012 by HouseInSight.
+
+  %body{"data-spy" => "scroll", "data-target" => ".bs-docs-sidebar"}
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "./index.html"} 房产博客
+          .nav-collapse.collapse
+            %ul.nav
+              %li
+                %a{:href => "#"} 热门博客
+              %li.active
+                = link_to '我的博客', apartments_path  
+              %li
+                %a{:href => "#"} 新盘报告
+              %li
+                %a{:href => "#"} 关于我们  
+
+              - if user_signed_in?
+                %li
+                  %a{:href => "#"}= current_user.email
+                %li
+                  = link_to "退出", destroy_user_session_path, :method => :delete
+              - else
+                %li
+                  = link_to "登录", new_user_session_path
+                %li
+                  = link_to "注册", new_user_registration_path
+            %form.navbar-form.pull-right
+              %input#search_key.span3{:name => "", :placeholder => "输入楼盘名称，地区或者街道", :type => "text"}
+              %button.btn{:type => "submit"} 搜索
+                
+
+    %header#overview.jumbotron.subhead
+      .container
+        %h3 房产博客
+        %h4 记录与分享您的买房历程
+        %h4 帮您思考和选择更适合您的房子
+        %wb:share-button{:count => "n", :relateuid => "2647082063"}
+
+    .container
+      .row
+        .span10.offset1
+          = yield 
+
+  %footer.footer
+    .container
+      %p.pull-right
+        %a{:href => "#"} Back to top
+      %p
+        Copyright 2012 by HouseInSight.
