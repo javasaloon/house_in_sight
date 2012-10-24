@@ -1,64 +1,49 @@
-- @apartments.each do |apartment|
-  .row-fluid
-    .span1
-      %ul.unstyled
-        %li=100.to_s
-        %li
-          %i.icon-hand-up.icon-large.red 
-        %li
-          %br
-        %li=20.to_s
-        %li
-          %i.icon-hand-down.icon-large.gray
-    .span2  
-      = link_to image_tag(apartment.image_url), apartment
-    .span4  
-      %ul.unstyled
-        %li= apartment.name
-        %li
-          = apartment.layout
-          = apartment.floor_info
-        %li= apartment.road_info
-        %li= apartment.age.to_s + " 年"
-    .span2
-      = apartment.area.to_s + " 平米"
-    .span1
-      %strong= apartment.price_info
-    .span2 
-      - if apartment.tags
+:javascript
+  $(function() {
+    $('#blog-waterfull').isotope({
+      // options
+      itemSelector : '.blog-card',
+      layoutMode : 'fitRows'
+    });
+  }); 
+
+#blog-waterfull
+  - @apartments.each do |apartment|
+    .blog-card
+      .row
+        .span1
+          %ul.unstyled
+            %li
+              %h4= apartment.name
+            %li.red 
+              %strong= apartment.price_info
+        .span1
+          = link_to image_tag(apartment.image_url), apartment, :class=>"thumbnail"
+      .info-card
         %ul.unstyled
-          - raw apartment.tags.map { |t| link_to t,  tag_path(t)}.each do |e|
-            %li= e 
-  .row-fluid.dash-line
-    .span2.offset1
+          %li
+            = apartment.layout
+            = apartment.floor_info
+          %li
+            = apartment.area.to_s + "平米" 
+            = (apartment.price/apartment.area).round(1).to_s + "万/平米" 
+
+          %li
+            = apartment.age.to_s + "年"
+            = apartment.build_type
+          %li= apartment.road_info
+
+      .actions
+        = link_to '真实(5)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to '虚假(1)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to '已卖(12)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to '添加相似(125)', new_apartment_path 
+        = link_to '收藏(25)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to '删除', apartment, method: :delete, data: { confirm: 'Are you sure?' }
+      
+      .up-down
+        %i.icon-hand-up.icon-large.red 
+        %i.icon-hand-down.icon-large.gray
+
       %i.muted= apartment.update_info
-    .span6.offset2
-      %ul.horizontal
-        - if user_signed_in?
-          %li= link_to '真实(5)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-          %li= link_to '虚假(1)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-          %li= link_to '已卖(12)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-          %li= link_to '添加相似(125)', new_apartment_path 
-          %li= link_to '收藏(25)', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-          %li= link_to '删除', apartment, method: :delete, data: { confirm: 'Are you sure?' }
-   
-.pagination.pagination-right
-  %ul.page-numbers
-    %li
-      %a{:href => "#"} 上一页
-    %li
-      %a.current{:href => "#"} 1
-    %li
-      %a.number{:href => "#"} 2
-    %li
-      %a.number{:href => "#"} 3
-    %li
-      %a{:href => "#"} ...
-    %li
-      %a.number{:href => "#"} 99
-    %li
-      %a.number{:href => "#"} 100
-    %li
-      %a.number{:href => "#"} 101
-    %li
-      %a{:href => "#"} 下一页
+

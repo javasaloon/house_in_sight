@@ -14,6 +14,18 @@ ul.horizontal {
   @include horizontal-list;
 }
 
+body {
+  padding-top: 50px;
+}
+
+.footer {
+  background-color:#9a9a9a;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  
+}
+
 
  
 

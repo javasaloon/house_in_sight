@@ -47,16 +47,20 @@
               %button.btn{:type => "submit"} 搜索
                 
 
-    %header#overview.jumbotron.subhead
-      .container
-        %h3 房产博客
-        %h4 记录与分享您的买房历程
-        %h4 帮您思考和选择更适合您的房子
-        %wb:share-button{:count => "n", :relateuid => "2647082063"}
+    
 
     .container
       .row
         .span10.offset1
+          %header#overview.jumbotron.subhead
+          .container
+            %h3 房产博客
+            %h4 记录与分享您的买房历程
+            %h4 帮您思考和选择更适合您的房子
+            %wb:share-button{:count => "n", :relateuid => "2647082063"}
+
+      .row
+        .span11.offset1
           = yield 
 
   %footer.footer
