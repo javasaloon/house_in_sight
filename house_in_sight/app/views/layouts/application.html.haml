@@ -1,8 +1,9 @@
 !!!
 %html{"xmlns:wb" => "http://open.weibo.com/wb"}
   %head
-    %meta{:charset => "utf-8"}
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %head 
+    %meta{:charset => "utf-8"} 
+    %meta{:content => "width=device-width, initial-scale=1.0", :name=> "viewport"}
 
     %title 房产博客
     = stylesheet_link_tag  "application", :media => "all"
@@ -45,27 +46,20 @@
             %form.navbar-form.pull-right
               %input#search_key.span3{:name => "", :placeholder => "输入楼盘名称，地区或者街道", :type => "text"}
               %button.btn{:type => "submit"} 搜索
-                
-
+            
+    %header#overview.jumbotron.subhead
+      .container
+        %h3 房产博客
+        %h4 记录与分享您的买房历程
+        %h4 帮您思考和选择更适合您的房子
+        %wb:share-button{:count => "n", :relateuid => "2647082063"}        
     
-
     .container
-      .row
-        .span10.offset1
-          %header#overview.jumbotron.subhead
-          .container
-            %h3 房产博客
-            %h4 记录与分享您的买房历程
-            %h4 帮您思考和选择更适合您的房子
-            %wb:share-button{:count => "n", :relateuid => "2647082063"}
+      = yield 
 
-      .row
-        .span11.offset1
-          = yield 
-
-  %footer.footer
-    .container
-      %p.pull-right
-        %a{:href => "#"} Back to top
-      %p
-        Copyright 2012 by HouseInSight.
+    %footer.footer
+      .container
+        %p.pull-right
+          %a{:href => "#"} Back to top
+        %p
+          Copyright 2012 by HouseInSight.
