@@ -9,8 +9,10 @@
     = stylesheet_link_tag  "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags 
-
+ 
     %script{:charset => "utf-8", :src => "http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=", :type => "text/javascript"}
+
+
     = yield(:head)
 
   %body{"data-spy" => "scroll", "data-target" => ".bs-docs-sidebar"}
@@ -46,14 +48,31 @@
             %form.navbar-form.pull-right
               %input#search_key.span3{:name => "", :placeholder => "输入楼盘名称，地区或者街道", :type => "text"}
               %button.btn{:type => "submit"} 搜索
-            
-    %header#overview.jumbotron.subhead
-      .container
-        %h3 房产博客
-        %h4 记录与分享您的买房历程
-        %h4 帮您思考和选择更适合您的房子
-        %wb:share-button{:count => "n", :relateuid => "2647082063"}        
-    
+    .subhead.container.dash-line
+      .row
+        .span3
+          %h3 房产博客
+          %p 帮您思考和选择更适合的房子
+          %p 记录与分享您的买房历程
+          %wb:share-button{:size => "big", :count=>"n"}
+        .span6
+          %h4 我想要买的房子最好～～
+          #preference
+            .item
+              两房
+            .item 
+              靠近地铁2号线
+            .item
+              小学学区房
+            .item
+              靠近世纪公园
+            .item
+              总价200左右
+            .item
+              2楼到5楼
+            .item
+              二手房
+        
     .container
       = yield 
 
@@ -63,3 +82,24 @@
           %a{:href => "#"} Back to top
         %p
           Copyright 2012 by HouseInSight.
+:javascript
+  $(document).ready(function(){
+    var $container = $('#preference');
+    $items = $('.item'); 
+    $container.isotope({
+        itemSelector: $items,
+        masonry: {
+            columnWidth: 60
+        },
+        getSortData: {
+            selected: function ($item) {
+                return ($item.hasClass('selected') ? -1000 : 0) + $item.index();
+            }
+        },
+        sortBy: 'selected'
+    }); 
+    $items.click(function () {
+
+        $container.isotope('reLayout');
+    }); 
+  });

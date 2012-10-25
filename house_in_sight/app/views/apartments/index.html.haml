@@ -1,7 +1,7 @@
 :javascript
   $(document).ready(function(){
     var $container = $('#blog-waterfull');
-    $items = $('.blog-card'); 
+    $items = $('.card'); 
     $container.isotope({
         itemSelector: $items,
         masonry: {
@@ -30,9 +30,10 @@
     }); 
   });
 
+%h3 我看过的房子
 #blog-waterfull
   - @apartments.each do |apartment|
-    .blog-card
+    .card
       .minimise
         = link_to image_tag(apartment.image_url), apartment, :class=>"thumbnail"
         .info-card
@@ -45,11 +46,7 @@
             %li
               = apartment.layout
               = apartment.floor_info
-            %li
-              
-              
-          
-            
+           
       .maximise
         .row
           .span1

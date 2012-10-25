@@ -1,14 +1,31 @@
 @import "compass/reset";
+@import "compass";
+
 @import "bootstrap";
 @import "bootstrap-responsive";
-
 @import "font-awesome";
-@import "compass/typography/lists/horizontal-list";
+
 @import "apartments";
 
+.red {
+  color: #e24a6d;
+}
+.gray {
+  color: #8e8e8e;
+}
 .dash-line {
   border-bottom: 1px dotted #bcb6fd;
   margin-bottom: 1em;
+}
+
+#preference .item {
+  background: #9177f6;
+  padding: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  @include box-shadow((rgba(blue, 0.4) 0 0 10px, rgba(green, 0.2) 0 0 3px 1px inset)); 
+  @include border-radius(8px);
 }
 
 ul.horizontal {
@@ -26,6 +43,7 @@ body {
   padding-top: 1em;
   
 }
+
 
 
  
