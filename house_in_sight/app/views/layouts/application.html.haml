@@ -5,13 +5,10 @@
     %meta{:charset => "utf-8"} 
     %meta{:content => "width=device-width, initial-scale=1.0", :name=> "viewport"}
 
-    %title 房产博客
+    %title 房战纪实
     = stylesheet_link_tag  "application", :media => "all"
     = javascript_include_tag "application"
-    = csrf_meta_tags 
- 
-    %script{:charset => "utf-8", :src => "http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=", :type => "text/javascript"}
-
+    = csrf_meta_tags  
 
     = yield(:head)
 
@@ -23,7 +20,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "./index.html"} 房产博客
+          %a.brand{:href => "./index.html"} 房战纪实
           .nav-collapse.collapse
             %ul.nav
               %li
@@ -51,10 +48,11 @@
     .subhead.container.dash-line
       .row
         .span3
-          %h3 房产博客
+          %h3 房战纪实
+          %p 买房也是一场战争和游戏
           %p 帮您思考和选择更适合的房子
-          %p 记录与分享您的买房历程
-          %wb:share-button{:size => "big", :count=>"n"}
+          %p 记录与分享您的买房历程 
+
         .span6
           %h4 我想要买的房子最好～～
           #preference
@@ -72,6 +70,13 @@
               2楼到5楼
             .item
               二手房
+        .span2.offset1
+          / ShareTo Button BEGIN
+          %a.shareto_button{:href => "http://shareto.com.cn/share.html"}
+            %img{:alt => "分享道", :height => "21", :src => "http://s.shareto.com.cn/btn/lg-share-cn.gif", :style => "border:0", :width => "125"}/
+          %script{:charset => "utf-8", :src => "http://s.shareto.com.cn/js/shareto_button.js", :type => "text/javascript"}
+          / ShareTo Button END
+
         
     .container
       = yield 

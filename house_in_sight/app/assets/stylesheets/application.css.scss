@@ -24,6 +24,7 @@
   margin-top: 1em;
   margin-bottom: 1em;
   font-size: 1.2em;
+  color: #F3F30C;
   @include box-shadow((rgba(blue, 0.4) 0 0 10px, rgba(green, 0.2) 0 0 3px 1px inset)); 
   @include border-radius(8px);
 }
