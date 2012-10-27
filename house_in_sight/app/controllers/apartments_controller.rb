@@ -3,6 +3,7 @@ class ApartmentsController < ApplicationController
   # GET /apartments
   # GET /apartments.json
   def index
+    @apartment = Apartment.new
     if params[:tag]
       @apartments = Apartment.tagged_with(params[:tag]) 
     else

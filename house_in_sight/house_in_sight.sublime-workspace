@@ -43,7 +43,7 @@
 			"file": "app/views/layouts/application.html.haml",
 			"settings":
 			{
-				"buffer_size": 2995,
+				"buffer_size": 3244,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,7 +51,7 @@
 			"file": "app/views/apartments/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 2711,
+				"buffer_size": 2260,
 				"line_ending": "Unix"
 			}
 		},
@@ -62,17 +62,33 @@
 				"buffer_size": 726,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "app/views/apartments/_card_actions.html.haml",
+			"settings":
+			{
+				"buffer_size": 503,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 87.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
 				"gitpush",
 				"Git: Push"
+			],
+			[
+				"gitc",
+				"Git: Commit"
+			],
+			[
+				"gita",
+				"Git: Add..."
 			],
 			[
 				"gitco",
@@ -85,14 +101,6 @@
 			[
 				"gits",
 				"Git: Status"
-			],
-			[
-				"gita",
-				"Git: Add..."
-			],
-			[
-				"gitc",
-				"Git: Commit"
 			],
 			[
 				"jquer re",
@@ -240,6 +248,9 @@
 	},
 	"file_history":
 	[
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/_card_actions.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/_form.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/new.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/apartments.css.scss",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/show.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/basic.html.haml",
@@ -259,12 +270,10 @@
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/helpers/apartments_helper.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/controllers/apartment_steps_controller.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/models/base.rb",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/_form.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/config/routes.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/models/district.rb",
 		"/Users/jacky/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/edit.html.haml",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/new.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/assets/javascripts/nested_form.js",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/public/javascripts/nested_form.js"
 	],
@@ -346,7 +355,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -354,15 +363,15 @@
 					"file": "app/views/layouts/application.html.haml",
 					"settings":
 					{
-						"buffer_size": 2995,
+						"buffer_size": 3244,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2057,
-								2057
+								1821,
+								1821
 							]
 						],
 						"settings":
@@ -372,7 +381,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1132.0,
+						"translation.y": 524.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -382,15 +391,15 @@
 					"file": "app/views/apartments/index.html.haml",
 					"settings":
 					{
-						"buffer_size": 2711,
+						"buffer_size": 2260,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								889,
-								889
+								2036,
+								2036
 							]
 						],
 						"settings":
@@ -400,7 +409,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1061.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -417,8 +426,8 @@
 						"selection":
 						[
 							[
-								415,
-								415
+								355,
+								355
 							]
 						],
 						"settings":
@@ -428,7 +437,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 154.0,
+						"translation.y": 361.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/apartments/_card_actions.html.haml",
+					"settings":
+					{
+						"buffer_size": 503,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
