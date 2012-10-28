@@ -36,7 +36,7 @@
     .container
       .row
         .span8.offset3
-          = form_for(@apartment, :html => {:class => 'form-horizontal' }) do |f| 
+          = form_for(@apartment, :html => {:class => 'form-horizontal' }, :remote=>true) do |f| 
             .row
               .span1
                 .pull-right= "小区:"
@@ -83,8 +83,8 @@
                 = content_tag :span, '万元', :class => "add-on" 
             .row  
               .span5.offset1.pull-left
-                = f.submit "添加", :class => "btn btn-primary" 
-                = f.submit "取消", :class => "btn btn-success" 
+                = f.submit "添加", :class => "btn btn-primary", :id => "submit-blog"
+                = f.submit "取消", :class => "btn btn-success", :id => "cancel-blog"
 
   - @apartments.each do |apartment|
     .card

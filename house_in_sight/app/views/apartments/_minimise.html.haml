@@ -1,0 +1,13 @@
+.card
+  .minimise
+    = link_to image_tag(@apartment.image_url), @apartment, :class=>"thumbnail"
+    .info-card
+      %ul.unstyled
+        %li
+          %h4= @apartment.village.name if @apartment.village
+        %li.red 
+          %strong= @apartment.price_info
+          = @apartment.area.to_s + "平米" 
+        %li
+          = @apartment.layout
+          = @apartment.floor_info

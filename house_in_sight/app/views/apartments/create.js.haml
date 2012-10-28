@@ -1,0 +1,8 @@
+alert('Create Successfully');
+var $container = $('#blog-waterfull');
+
+
+var $newApartment = $("<%=j render minimise, @apartment %>");
+$container.prepend( $newApartment).isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
+alert('prepend Successfully');
+

@@ -26,6 +26,32 @@ class ApartmentsController < ApplicationController
     end
   end
 
+  def create
+    logger.info "create apartment"
+    @apartment = Apartment.new(params[:apartment])
+
+    respond_to do |format|
+      if @apartment.save
+        format.html { redirect_to @apartment, notice: 'Apartment was successfully created.' }
+        format.js 
+        format.json { render json: @apartment, status: :created, location: @apartment }
+      else
+        format.html { render action: "new" }
+        format.js 
+        format.json { render json: @apartment.errors, status: :unprocessable_entity }
+      end
+    end
+    
+  end
+
+  def update  
+    #@apartment.update_attributes(params[:apartment])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @apartment }
+    end 
+  end 
+
   # GET /apartments/new
   # GET /apartments/new.json
   def new 
