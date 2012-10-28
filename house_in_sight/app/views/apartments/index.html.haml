@@ -42,7 +42,7 @@
                 .pull-right= "小区:"
               .span5
                 = f.text_field :title 
-                = content_tag :div, '试一试输入拼音首字母，如要找万科金色城市，输入wkjscs'
+                = content_tag :div, '试试输入拼音首字母，如要找万科金色城市，输入wkjscs'
             .row
               .span1
                 .pull-right= "房间:"
@@ -69,6 +69,12 @@
               .span5.small-input
                 = f.text_field :floor, :maxlength => 2
                 = content_tag :span, '楼', :class => "add-on" 
+            .row  
+              .span1
+                .pull-right= "装修:"  
+              .span5.small-input
+                = f.select :decoration, %w(精装修 中等装修 老装修 毛坯)
+                   
             .row  
               .span1
                 .pull-right= "报价:" 
