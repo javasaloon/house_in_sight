@@ -34,13 +34,12 @@
 #blog-waterfull
   .card
     = simple_nested_form_for(@apartment, :html => {:class => 'form-horizontal' }) do |f| 
-      = f.input :name, :label => "小区名称:"
+      = f.input :title, :label => "小区名称:"
       = f.input :floor, :label => "楼层:" 
       = f.input :floor_total, :label => "总高:"
-      
-        = f.input :bedroom_count, :label => "卧室:"
-        = f.input :livingroom_count, :label => "厅:" 
-        = f.input :washroom_count, :label => "卫生间:"
+      = f.input :bedroom_count, :label => "卧室:"
+      = f.input :livingroom_count, :label => "厅:" 
+      = f.input :washroom_count, :label => "卫生间:"
       = f.input :tag_list, :label => "标签:", :hint => "(逗号隔开，比如：\“畅销，知名品牌，打折\”)" 
       = f.file_field :image_url, :label => "图片:" 
       = f.input :price, :label => "报价:" 
@@ -54,7 +53,7 @@
         .info-card
           %ul.unstyled
             %li
-              %h4= apartment.name
+              %h4= apartment.village.name if apartment.village
             %li.red 
               %strong= apartment.price_info
               = apartment.area.to_s + "平米" 
@@ -67,7 +66,7 @@
           .span1
             %ul.unstyled
               %li
-                %h4= apartment.name
+                %h4= apartment.village.name if apartment.village
               %li.red 
                 %strong= apartment.price_info
           .span1
@@ -96,5 +95,5 @@
         .up-down
           %i.icon-hand-up.icon-large.red 
           %i.icon-hand-down.icon-large.gray 
-        %i.muted= apartment.update_info
 
+        %i.muted= apartment.update_info

@@ -9,7 +9,7 @@ class Apartment
 
   field :description, :type => String
   field :image_url, :type => String
-  field :name, :type => String
+  field :title, :type => String
   field :price, :type => Integer 
 
 
@@ -30,13 +30,12 @@ class Apartment
   field :five_years, :type => Boolean
   field :only, :type => Boolean  
 
-  belongs_to :district
-  has_and_belongs_to_many :subways
-
-  attr_accessible :id, :description, :image_url, :name, :price, :tag_list,
+  belongs_to :village
+   
+  attr_accessible :id, :description, :image_url, :title, :price, :tag_list,
   :floor, :floor_total, :bedroom_count, :livingroom_count, :washroom_count, 
-  :age, :build_type, :new_build, :five_years, :only, :district_id, :created,
-  :modified, :road, :area
+  :age, :build_type, :new_build, :five_years, :only, :created,
+  :modified, :road, :area, :village_id
   
   #acts_as_taggable
   mount_uploader :image_url, ImageUploader
@@ -82,7 +81,7 @@ class Apartment
   def self.tag_counts
     #Apartment.select("tags.*, count(taggings.tag_id) as count").
       #joins(:taggings).group("taggings.tag_id")
-    [{ :name=> 'tag', :count => 1 }]
+    [{ :title=> 'tag', :count => 1 }]
   end
 
   def setModified 

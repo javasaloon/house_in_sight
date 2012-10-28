@@ -51,7 +51,7 @@
 			"file": "app/views/apartments/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 2260,
+				"buffer_size": 3310,
 				"line_ending": "Unix"
 			}
 		},
@@ -64,10 +64,34 @@
 			}
 		},
 		{
-			"file": "app/views/apartments/_card_actions.html.haml",
+			"file": "app/views/apartments/show.html.haml",
 			"settings":
 			{
-				"buffer_size": 503,
+				"buffer_size": 1780,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/apartments_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1210,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/apartment_steps/basic.html.haml",
+			"settings":
+			{
+				"buffer_size": 691,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/apartment_steps/building.html.haml",
+			"settings":
+			{
+				"buffer_size": 491,
 				"line_ending": "Unix"
 			}
 		}
@@ -75,12 +99,20 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 87.0,
 		"selected_items":
 		[
 			[
 				"gitpush",
 				"Git: Push"
+			],
+			[
+				"git",
+				"Git: Commit"
+			],
+			[
+				"gitadd",
+				"Git: Add..."
 			],
 			[
 				"gitc",
@@ -125,10 +157,6 @@
 			[
 				"htm",
 				"HTML2Haml: Convert selection"
-			],
-			[
-				"gitadd",
-				"Git: Add..."
 			],
 			[
 				"gitcom",
@@ -248,15 +276,15 @@
 	},
 	"file_history":
 	[
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/_card_actions.html.haml",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/_form.html.haml",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/new.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/models/apartment.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/apartments.css.scss",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/show.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/_form.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/basic.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/_card_actions.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/new.html.haml",
+		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/show.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/fee.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/application.css.scss",
-		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/models/apartment.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartments/index.html.haml",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/controllers/apartments_controller.rb",
 		"/Users/jacky/workspace/house_in_sight/house_in_sight/app/views/apartment_steps/_form.html.haml",
@@ -355,7 +383,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -391,15 +419,15 @@
 					"file": "app/views/apartments/index.html.haml",
 					"settings":
 					{
-						"buffer_size": 2260,
+						"buffer_size": 3310,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2036,
-								2036
+								871,
+								871
 							]
 						],
 						"settings":
@@ -409,7 +437,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1061.0,
+						"translation.y": 503.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -426,8 +454,8 @@
 						"selection":
 						[
 							[
-								355,
-								355
+								144,
+								144
 							]
 						],
 						"settings":
@@ -437,17 +465,73 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 361.0,
+						"translation.y": 10.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "app/views/apartments/_card_actions.html.haml",
+					"file": "app/views/apartments/show.html.haml",
 					"settings":
 					{
-						"buffer_size": 503,
+						"buffer_size": 1780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/controllers/apartments_controller.rb",
+					"settings":
+					{
+						"buffer_size": 1210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								139,
+								139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/apartment_steps/basic.html.haml",
+					"settings":
+					{
+						"buffer_size": 691,
 						"regions":
 						{
 						},
@@ -456,6 +540,34 @@
 							[
 								0,
 								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/apartment_steps/building.html.haml",
+					"settings":
+					{
+						"buffer_size": 491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								491
 							]
 						],
 						"settings":
@@ -517,6 +629,18 @@
 		"selected_items":
 		[
 			[
+				"apartcon",
+				"app/controllers/apartments_controller.rb"
+			],
+			[
+				"apar",
+				"app/models/apartment.rb"
+			],
+			[
+				"apart",
+				"app/assets/stylesheets/apartments.css.scss"
+			],
+			[
 				"app",
 				"app/assets/stylesheets/application.css.scss"
 			],
@@ -533,20 +657,12 @@
 				"app/views/apartments/show.html.haml"
 			],
 			[
-				"apart",
-				"app/assets/stylesheets/apartments.css.scss"
-			],
-			[
 				"inde",
 				"app/views/apartments/index.html.haml"
 			],
 			[
 				"applha",
 				"app/views/layouts/application.html.haml"
-			],
-			[
-				"apar",
-				"app/models/apartment.rb"
 			],
 			[
 				"fee",
