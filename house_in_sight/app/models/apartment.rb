@@ -14,7 +14,10 @@ class Apartment
 
 
 
+  field :building, :type => Integer
   field :floor, :type => Integer
+  field :room, :type => Integer
+
   field :floor_total, :type => Integer
   field :road, :type => String
 
@@ -28,6 +31,7 @@ class Apartment
   field :build_type, :type => String
   field :new_build, :type => Boolean
   field :five_years, :type => Boolean
+  field :decoration, :type => String
   field :only, :type => Boolean  
 
   belongs_to :village
@@ -35,7 +39,7 @@ class Apartment
   attr_accessible :id, :description, :image_url, :title, :price, :tag_list,
   :floor, :floor_total, :bedroom_count, :livingroom_count, :washroom_count, 
   :age, :build_type, :new_build, :five_years, :only, :created,
-  :modified, :road, :area, :village_id
+  :modified, :road, :area, :village_id, :building, :room, :decoration
   
   #acts_as_taggable
   mount_uploader :image_url, ImageUploader

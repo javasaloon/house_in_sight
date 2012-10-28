@@ -32,19 +32,53 @@
 
 %h3 我看过的房子
 #blog-waterfull
-  .card
-    = simple_nested_form_for(@apartment, :html => {:class => 'form-horizontal' }) do |f| 
-      = f.input :title, :label => "小区名称:"
-      = f.input :floor, :label => "楼层:" 
-      = f.input :floor_total, :label => "总高:"
-      = f.input :bedroom_count, :label => "卧室:"
-      = f.input :livingroom_count, :label => "厅:" 
-      = f.input :washroom_count, :label => "卫生间:"
-      = f.input :tag_list, :label => "标签:", :hint => "(逗号隔开，比如：\“畅销，知名品牌，打折\”)" 
-      = f.file_field :image_url, :label => "图片:" 
-      = f.input :price, :label => "报价:" 
-      .pull-right
-        = f.submit "添加"
+  #blog-form.card
+    .container
+      .row
+        .span8.offset3
+          = form_for(@apartment, :html => {:class => 'form-horizontal' }) do |f| 
+            .row
+              .span1
+                .pull-right= "小区:"
+              .span5
+                = f.text_field :title 
+                = content_tag :div, '试一试输入拼音首字母，如要找万科金色城市，输入wkjscs'
+            .row
+              .span1
+                .pull-right= "房间:"
+              .span5.small-input
+                = f.text_field :building 
+                = content_tag :span, ' 号楼 - ', :class => "add-on"  
+                = f.text_field :room 
+                = content_tag :span, ' 室 (可以不填，此信息只能您自己看到)', :class => "add-on" 
+            .row
+              .span1
+                .pull-right= "房型:"
+              .span5.small-input
+                = f.text_field :bedroom_count, :maxlength => 1
+                = content_tag :span, '室 - ', :class => "add-on"  
+                
+                = f.text_field :livingroom_count, :maxlength => 1
+                = content_tag :span, '厅 - ', :class => "add-on"
+                
+                = f.text_field :washroom_count, :maxlength => 1
+                = content_tag :span, '卫', :class => "add-on"
+            .row  
+              .span1
+                .pull-right= "楼层:"  
+              .span5.small-input
+                = f.text_field :floor, :maxlength => 2
+                = content_tag :span, '楼', :class => "add-on" 
+            .row  
+              .span1
+                .pull-right= "报价:" 
+              .span5.small-input
+                = f.text_field :price, :maxlength => 6
+                = content_tag :span, '万元', :class => "add-on" 
+            .row  
+              .span5.offset1.pull-left
+                = f.submit "添加", :class => "btn btn-primary" 
+                = f.submit "取消", :class => "btn btn-success" 
 
   - @apartments.each do |apartment|
     .card

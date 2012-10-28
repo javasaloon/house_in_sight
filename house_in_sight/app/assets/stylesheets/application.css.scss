@@ -13,10 +13,22 @@
 .gray {
   color: #8e8e8e;
 }
+.btn {
+  font-weight: bolder;
+}
 .dash-line {
   border-bottom: 1px dotted #bcb6fd;
   margin-bottom: 1em;
+} 
+.small-input {
+  input {
+    width:3em; 
+  } 
 }
+.row {
+  margin-bottom:1em;
+}
+
 
 #preference .item {
   background: #9177f6;
