@@ -5,7 +5,7 @@
     %meta{:charset => "utf-8"} 
     %meta{:content => "width=device-width, initial-scale=1.0", :name=> "viewport"}
 
-    %title 房战纪实
+    %title 买房看规划
     = stylesheet_link_tag  "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags  
@@ -20,15 +20,15 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "./index.html"} 房战纪实
+          %a.brand{:href => "./index.html"} 买房看规划
           .nav-collapse.collapse
             %ul.nav
-              %li
-                %a{:href => "#"} 热门博客
               %li.active
-                = link_to '我的博客', apartments_path  
+                %a{:href => "#"} 最新规划
               %li
-                %a{:href => "#"} 新盘报告
+                %a{:href => "#"} 热门规划
+              %li
+                = link_to '我的关注', apartments_path  
               %li
                 %a{:href => "#"} 关于我们  
 
@@ -43,13 +43,14 @@
                 %li
                   = link_to "注册", new_user_registration_path
             %form.navbar-form.pull-right
-              %input#search_key.span3{:name => "", :placeholder => "输入楼盘名称，地区或者街道", :type => "text"}
+              %input#search_key.span3{:name => "", :placeholder => "输入地区或者街道", :type => "text"}
               %button.btn{:type => "submit"} 搜索
     .subhead.container.dash-line
       .row
         .span3
-          %h3 房战纪实
-          %p 买房也是一场战争和游戏
+          %h3 买房看规划
+          %p 买房既是生活需要也是个人资产储备
+          %p 区域的现状和发展规划至关重要
           %p 帮您思考和选择更适合的房子
           %p 记录与分享您的买房历程 
 
@@ -108,3 +109,4 @@
         $container.isotope('reLayout');
     }); 
   });
+                

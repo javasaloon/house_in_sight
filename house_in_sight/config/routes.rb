@@ -1,4 +1,6 @@
 HouseInSight::Application.routes.draw do
+  resources :plans
+
   resources :ads
 
   devise_for :users
@@ -7,7 +9,7 @@ HouseInSight::Application.routes.draw do
 
   resources :apartments
   resources :apartment_steps
-  root :to => 'apartments#index'
+  root :to => 'plans#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
