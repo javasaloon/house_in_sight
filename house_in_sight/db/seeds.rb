@@ -1,20 +1,23 @@
 # encoding: UTF-8
 cities = []
 %w(上海 北京 广州).each do |name|
-  cities << City.create!(name: name) 
+  cities << City.create!(name: name)
 end
 p cities
 
 districts = []
-%w(浦东新区 闵行区 嘉定区).each do |name|
-  districts << District.create!(name: name, city_id: cities.first.id)
+communities = []
+lines = File.open("/Users/chengxiang/workspace/assets/districts.txt", "r").read
+lines.each_line do |line|
+  names = line.split
+  p names
+  d = District.create!(name: names[0], city_id: cities.first.id)
+  districts << d
+  names[1..names.length].each do |community|
+    communities << Community.create!(name: community, district_id: d.id)
+  end
 end
 p districts
-
-communities = []
-%w(世纪公园 潍坊 张江).each do |name|
-  communities << Community.create!(name: name, district_id: districts.first.id)
-end 
 p communities
 
 villages = []
@@ -29,10 +32,10 @@ apartment = Apartment.create!(village_id: ying_hua_fang,
   title: "高性价比的好房子",
   price: 240, floor: 6, floor_total: 6, road: "海桐路",
   bedroom_count: 2, livingroom_count: 2, washroom_count: 1,
-  area: 77.0, age: 1998, build_type: "商品房", 
+  area: 77.0, age: 1998, build_type: "商品房",
   new_build: true, five_years: true, only: true,
   description: "高性价比的好房子，值得考虑",
-  image_url: File.open('/Users/jacky/workspace/images/2.jpeg')
+  image_url: File.open('/Users/chengxiang/workspace/assets/images/2.jpeg')
 )
 p apartment
 
@@ -41,10 +44,10 @@ apartment = Apartment.create!(village_id: ying_hua_fang,
   title: "高性价比的好房子",
   price: 233, floor: 6, floor_total: 6,
   bedroom_count: 2, livingroom_count: 2, washroom_count: 1,
-  area: 77.0, age: 1998, build_type: "商品房", 
+  area: 77.0, age: 1998, build_type: "商品房",
   new_build: true, five_years: true, only: true,
   description: "高性价比的好房子，值得考虑",
-  image_url: File.open('/Users/jacky/workspace/images/3.jpeg')
+  image_url: File.open('/Users/chengxiang/workspace/assets/images/3.jpeg')
 )
 p apartment
 
@@ -53,10 +56,10 @@ apartment = Apartment.create!(village_id: ying_hua_fang,
   title: "高性价比的好房子",
   price: 230, floor: 1, floor_total: 6, road: "海桐路",
   bedroom_count: 2, livingroom_count: 2, washroom_count: 1,
-  area: 77.0, age: 1998, build_type: "商品房", 
+  area: 77.0, age: 1998, build_type: "商品房",
   new_build: true, five_years: true, only: true,
   description: "高性价比的好房子，值得考虑",
-  image_url: File.open('/Users/jacky/workspace/images/4.jpeg')
+  image_url: File.open('/Users/chengxiang/workspace/assets/images/4.jpeg')
 )
 p apartment
 
@@ -65,10 +68,10 @@ apartment = Apartment.create!(village_id: ying_hua_fang,
   title: "高性价比的好房子",
   price: 300, floor: 6, floor_total: 6, road: "海桐路",
   bedroom_count: 3, livingroom_count: 2, washroom_count: 1,
-  area: 100.0, age: 1998, build_type: "商品房", 
+  area: 100.0, age: 1998, build_type: "商品房",
   new_build: true, five_years: true, only: true,
   description: "高性价比的好房子，值得考虑",
-  image_url: File.open('/Users/jacky/workspace/images/1.jpeg')
+  image_url: File.open('/Users/chengxiang/workspace/assets/images/1.jpeg')
 )
 p apartment
 
@@ -79,10 +82,10 @@ apartment = Apartment.create!(village_id: hai_tong_yuan,
   title: "高性价比的好房子",
   price: 240, floor: 6, floor_total: 6, road: "海桐路",
   bedroom_count: 2, livingroom_count: 2, washroom_count: 1,
-  area: 77.0, age: 1998, build_type: "商品房", 
+  area: 77.0, age: 1998, build_type: "商品房",
   new_build: true, five_years: true, only: true,
   description: "高性价比的好房子，值得考虑",
-  image_url: File.open('/Users/jacky/workspace/images/2.jpeg')
+  image_url: File.open('/Users/chengxiang/workspace/assets/images/2.jpeg')
 )
 p apartment
 
@@ -91,10 +94,10 @@ apartment = Apartment.create!(village_id: hai_tong_yuan,
   title: "高性价比的好房子",
   price: 233, floor: 6, floor_total: 6,
   bedroom_count: 2, livingroom_count: 2, washroom_count: 1,
-  area: 77.0, age: 1998, build_type: "商品房", 
+  area: 77.0, age: 1998, build_type: "商品房",
   new_build: true, five_years: true, only: true,
   description: "高性价比的好房子，值得考虑",
-  image_url: File.open('/Users/jacky/workspace/images/3.jpeg')
+  image_url: File.open('/Users/chengxiang/workspace/assets/images/3.jpeg')
 )
 p apartment
 
@@ -103,10 +106,10 @@ apartment = Apartment.create!(village_id: hai_tong_yuan,
   title: "高性价比的好房子",
   price: 230, floor: 1, floor_total: 6, road: "海桐路",
   bedroom_count: 2, livingroom_count: 2, washroom_count: 1,
-  area: 77.0, age: 1998, build_type: "商品房", 
+  area: 77.0, age: 1998, build_type: "商品房",
   new_build: true, five_years: true, only: true,
   description: "高性价比的好房子，值得考虑",
-  image_url: File.open('/Users/jacky/workspace/images/4.jpeg')
+  image_url: File.open('/Users/chengxiang/workspace/assets/images/4.jpeg')
 )
 p apartment
 
@@ -115,10 +118,10 @@ apartment = Apartment.create!(village_id: hai_tong_yuan,
   title: "高性价比的好房子",
   price: 300, floor: 6, floor_total: 6, road: "海桐路",
   bedroom_count: 3, livingroom_count: 2, washroom_count: 1,
-  area: 100.0, age: 1998, build_type: "商品房", 
+  area: 100.0, age: 1998, build_type: "商品房",
   new_build: true, five_years: true, only: true,
   description: "高性价比的好房子，值得考虑",
-  image_url: File.open('/Users/jacky/workspace/images/1.jpeg')
+  image_url: File.open('/Users/chengxiang/workspace/assets/images/1.jpeg')
 )
 p apartment
 
