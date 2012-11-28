@@ -3,6 +3,7 @@ class PlansController < ApplicationController
   # GET /plans.json
   def index
     @plans = Plan.all
+    @districts = District.all
 
     respond_to do |format|
       format.html # index.html.erb
