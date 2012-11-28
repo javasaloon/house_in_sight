@@ -13,3 +13,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/public/uploads/apartment/image_url/**/*
+*.DS_Store
