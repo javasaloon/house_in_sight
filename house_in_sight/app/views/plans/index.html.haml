@@ -1,15 +1,18 @@
-%ul.nav.nav-pills
-  -@districts.each_with_index do |d, index|
-    -if index == 0
-      %li.active
-        %a{:href => "#"} 
-          =d.name
-    -else
-      %li
-        %a{:href => "#"} 
-          =d.name
+= javascript_include_tag "district"
 
-
+.tabbable
+  %ul.nav.nav-tabs
+    -@districts.each_with_index do |d, index|
+      -if index == 0
+        %li.active
+          =link_to d.name,  "district/#{d.id}/communities"
+      -else
+        %li
+          =link_to d.name,  "district/#{d.id}/communities"
+  .tab-content
+    #community.tab-pane.active
+      %p 
+        =render("communities")
 .row-fluid
   .span6.offset1
     %h3 浦东新区 张江镇

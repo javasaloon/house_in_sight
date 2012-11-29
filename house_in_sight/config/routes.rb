@@ -2,10 +2,12 @@ HouseInSight::Application.routes.draw do
   resources :plans
 
   resources :ads
+  resources :districts
 
   devise_for :users
 
   get 'tags/:tag', to: 'apartments#index', as: :tag
+  get 'district/:id/communities', to: 'district#communities'
 
   resources :apartments
   resources :apartment_steps

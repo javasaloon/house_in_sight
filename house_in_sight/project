@@ -8,247 +8,174 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 app/.DS_Store
-badd +20 app/views/layouts/application.html.erb
-badd +28 app/assets/stylesheets/application.css
-badd +4 app/assets/stylesheets/apartments.css.scss
-badd +24 app/views/apartments/index.html.erb
-badd +2 app/assets/stylesheets/application.css.scss
-badd +16 app/assets/javascripts/application.js
-badd +30 Gemfile
-badd +63 config/application.rb
-badd +1 config.ru
-badd +31 app/views/apartments/show.html.erb
-badd +18 config/environments/development.rb
-badd +3 config/routes.rb
-badd +1 app/models/user.rb
+badd +7 db/seeds.rb
+badd +5 db/districts.txt
+badd +0 app/views/plans/index.html.haml
+badd +0 app/controllers/plans_controller.rb
+badd +0 app/models/plan.rb
+badd +47 app/models/apartment.rb
+badd +0 app/controllers/apartments_controller.rb
+badd +0 app/views/apartments/index.html.haml
+badd +0 .gitignore
 silent! argdel *
-edit app/assets/stylesheets/application.css.scss
+edit app/views/plans/index.html.haml
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 41 + 61) / 122)
-exe 'vert 2resize ' . ((&columns * 80 + 61) / 122)
 argglobal
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=9
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+2
+normal! zo
+3
+normal! zo
 4
-normal zo
-let s:l = 5 - ((4 * winheight(0) + 17) / 34)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
+normal! zo
 5
-normal! 09l
-lcd ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets
-wincmd w
+normal! zo
+9
+normal! zo
+9
+normal! zo
+14
+normal! zo
+15
+normal! zo
+43
+normal! zo
+44
+normal! zo
+let s:l = 2 - ((1 * winheight(0) + 15) / 31)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
+normal! 03l
+tabedit .gitignore
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
 argglobal
-edit ~/workspace/house_in_sight/house_in_sight/app/views/layouts/application.html.erb
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=9
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 17 - ((16 * winheight(0) + 15) / 31)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 010l
+lcd ~/workspace/house_in_sight/house_in_sight
+tabedit ~/workspace/house_in_sight/house_in_sight/app/controllers/plans_controller.rb
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=9
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
 4
-normal zo
-13
-normal zo
-13
-normal zo
-14
-normal zo
-15
-normal zo
-19
-normal zo
-20
-normal zo
-23
-normal zo
-23
-normal zo
-33
-normal zo
-33
-normal zo
-40
-normal zo
-41
-normal zo
-42
-normal zo
-44
-normal zo
-48
-normal zo
-58
-normal zo
-52
-normal zo
-58
-normal zo
-let s:l = 27 - ((24 * winheight(0) + 17) / 34)
+normal! zo
+5
+normal! zo
+let s:l = 6 - ((5 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
-normal! 014l
-lcd ~/workspace/house_in_sight/house_in_sight/app/views/layouts
-wincmd w
-exe 'vert 1resize ' . ((&columns * 41 + 61) / 122)
-exe 'vert 2resize ' . ((&columns * 80 + 61) / 122)
-tabedit ~/workspace/house_in_sight/house_in_sight/app/views/apartments/index.html.erb
+6
+normal! 04l
+lcd ~/workspace/house_in_sight/house_in_sight/app/controllers
+tabedit ~/workspace/house_in_sight/house_in_sight/app/models/plan.rb
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 61) / 122)
-exe 'vert 2resize ' . ((&columns * 90 + 61) / 122)
 argglobal
-enew
-file ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/NERD_tree_1
-setlocal fdm=manual
+setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-lcd ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets
-wincmd w
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=9
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 35 - ((30 * winheight(0) + 17) / 34)
+let s:l = 2 - ((1 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 0
-lcd ~/workspace/house_in_sight/house_in_sight/app/views/apartments
-wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 61) / 122)
-exe 'vert 2resize ' . ((&columns * 90 + 61) / 122)
-tabedit ~/workspace/house_in_sight/house_in_sight/Gemfile
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 32 - ((23 * winheight(0) + 17) / 34)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-32
-normal! 011l
-lcd ~/workspace/house_in_sight/house_in_sight
-tabedit ~/workspace/house_in_sight/house_in_sight/app/models/user.rb
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 61) / 122)
-exe 'vert 2resize ' . ((&columns * 90 + 61) / 122)
-argglobal
-enew
-file ~/workspace/house_in_sight/house_in_sight/app/assets/stylesheets/NERD_tree_1
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
+2
+normal! 015l
 lcd ~/workspace/house_in_sight/house_in_sight/app/models
-wincmd w
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 17) / 34)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/workspace/house_in_sight/house_in_sight/app/models
-wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 61) / 122)
-exe 'vert 2resize ' . ((&columns * 90 + 61) / 122)
-tabedit ~/workspace/house_in_sight/house_in_sight/app/views/apartments/show.html.erb
+tabedit ~/workspace/house_in_sight/house_in_sight/app/controllers/apartments_controller.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-setlocal fdm=manual
+setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=9
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 38 - ((12 * winheight(0) + 17) / 34)
+let s:l = 12 - ((11 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-38
+12
 normal! 0
+lcd ~/workspace/house_in_sight/house_in_sight/app/controllers
+tabedit ~/workspace/house_in_sight/house_in_sight/app/views/apartments/index.html.haml
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=9
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+2
+normal! zo
+let s:l = 95 - ((11 * winheight(0) + 15) / 31)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+95
+normal! 05l
 lcd ~/workspace/house_in_sight/house_in_sight/app/views/apartments
-tabnext 3
+tabnext 2
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
