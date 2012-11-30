@@ -3,6 +3,7 @@ class DistrictController < ApplicationController
   def communities
     logger.info "download communities"
     @district = District.find(params[:id])
+    @communities = @district.communities
     respond_to do |format|
       format.json { render json: @district }
       format.js

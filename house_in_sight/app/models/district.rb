@@ -1,7 +1,7 @@
-class District 
+class District
   include Mongoid::Document
   field :name, :type => String
-  has_many :community
+  has_many :communities
   belongs_to :city
 
   attr_accessible :name, :city_id

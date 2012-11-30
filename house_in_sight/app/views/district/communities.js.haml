@@ -1,3 +1,3 @@
--#alert("here");
--#$("#community").html("- escape_javascript(render("communities"))");
-$("#community").html("TODO");
+:plain
+  var communities = "#{escape_javascript(render(:partial => 'district/communities'))}";
+  $("#community").html(communities);
