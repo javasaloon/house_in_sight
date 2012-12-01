@@ -1,4 +1,8 @@
 HouseInSight::Application.routes.draw do
+  resources :stations
+
+  resources :metros
+
   resources :plans
 
   resources :ads

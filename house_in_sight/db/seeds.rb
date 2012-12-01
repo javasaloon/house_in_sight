@@ -20,6 +20,22 @@ end
 p districts
 p communities
 
+metro = []
+stations = []
+lines = File.open("/Users/chengxiang/workspace/assets/metro.txt", "r").read
+lines.each_line do |line|
+  names = line.split
+  next if names.empty?
+  p names
+  m = Metro.create!(name: names[0], city_id: cities.first.id)
+  metro << m
+  names[1..names.length].each do |s|
+    stations << Station.create!(name: s, metro_id: m.id)
+  end
+end
+p metro
+p stations
+
 villages = []
 %w(樱花坊 海桐苑 海桐小区).each do |name|
   villages << Village.create!(name: name, community_id: communities.first.id)

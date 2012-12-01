@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @metro.name
+
+= link_to 'Edit', edit_metro_path(@metro)
+\|
+= link_to 'Back', metros_path

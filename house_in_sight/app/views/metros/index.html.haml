@@ -1,0 +1,19 @@
+%h1 Listing metros
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @metros.each do |metro|
+    %tr
+      %td= metro.name
+      %td= link_to 'Show', metro
+      %td= link_to 'Edit', edit_metro_path(metro)
+      %td= link_to 'Destroy', metro, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Metro', new_metro_path
