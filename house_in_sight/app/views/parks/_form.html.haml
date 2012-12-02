@@ -1,0 +1,11 @@
+= simple_form_for(@park) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :address
+    = f.input :phone
+    = f.input :traffic
+
+  .form-actions
+    = f.button :submit

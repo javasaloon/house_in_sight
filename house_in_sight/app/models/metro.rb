@@ -3,5 +3,5 @@ class Metro
   field :name, type: String
   has_many :stations
   belongs_to :city
-  attr_accessible :name, :city_id
+  attr_accessible :name, :city
 end

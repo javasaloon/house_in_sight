@@ -10,6 +10,9 @@
   - @metros.each do |metro|
     %tr
       %td= metro.name
+      %td
+        - metro.stations.each do |station|
+          = station.name
       %td= link_to 'Show', metro
       %td= link_to 'Edit', edit_metro_path(metro)
       %td= link_to 'Destroy', metro, method: :delete, data: { confirm: 'Are you sure?' }

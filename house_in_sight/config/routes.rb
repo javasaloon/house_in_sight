@@ -1,4 +1,6 @@
 HouseInSight::Application.routes.draw do
+  resources :parks
+
   resources :stations
 
   resources :metros

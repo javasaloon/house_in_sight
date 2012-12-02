@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @park.name
+%p
+  %b Address:
+  = @park.address
+%p
+  %b Phone:
+  = @park.phone
+%p
+  %b Traffic:
+  = @park.traffic
+
+= link_to 'Edit', edit_park_path(@park)
+\|
+= link_to 'Back', parks_path

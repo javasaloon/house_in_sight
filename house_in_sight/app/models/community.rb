@@ -3,5 +3,5 @@ class Community
   field :name, type: String
   has_many :village
   belongs_to :district
-  attr_accessible :name, :district_id
+  attr_accessible :name, :district
 end

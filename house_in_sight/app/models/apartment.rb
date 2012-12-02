@@ -1,16 +1,16 @@
 # encoding: utf-8
-class Apartment 
+class Apartment
   include Mongoid::Document
   include Mongoid::Document::Taggable
   field :created, type: DateTime, default: -> { DateTime.current  }
   field :modified, :type => DateTime, default: -> { DateTime.current  }
   before_save :setModified
-   
+
 
   field :description, :type => String
   field :image_url, :type => String
   field :title, :type => String
-  field :price, :type => Integer 
+  field :price, :type => Integer
 
 
 
@@ -32,15 +32,15 @@ class Apartment
   field :new_build, :type => Boolean
   field :five_years, :type => Boolean
   field :decoration, :type => String
-  field :only, :type => Boolean  
+  field :only, :type => Boolean
 
   belongs_to :village
-   
+
   attr_accessible :id, :description, :image_url, :title, :price, :tag_list,
-  :floor, :floor_total, :bedroom_count, :livingroom_count, :washroom_count, 
+  :floor, :floor_total, :bedroom_count, :livingroom_count, :washroom_count,
   :age, :build_type, :new_build, :five_years, :only, :created,
-  :modified, :road, :area, :village_id, :building, :room, :decoration
-  
+  :modified, :road, :area, :village, :building, :room, :decoration
+
   #acts_as_taggable
   mount_uploader :image_url, ImageUploader
 
@@ -55,14 +55,14 @@ class Apartment
     end
   end
   def price_info
-    self.price.to_s + "万" 
+    self.price.to_s + "万"
   end
   def update_info
-    diff = DateTime.current.to_time() - self.modified.to_time()   
+    diff = DateTime.current.to_time() - self.modified.to_time()
     time = nil
     day = diff / (3600 * 24)
     if day > 1
-      time = day.round().to_s + "天" 
+      time = day.round().to_s + "天"
     else
       hour = diff / 3600
         if hour > 1
@@ -88,8 +88,8 @@ class Apartment
     [{ :title=> 'tag', :count => 1 }]
   end
 
-  def setModified 
-    self.modified = DateTime.current 
+  def setModified
+    self.modified = DateTime.current
   end
-   
+
 end
