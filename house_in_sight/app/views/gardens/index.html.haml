@@ -1,0 +1,29 @@
+%h1 Listing gardens
+
+%table
+  %tr
+    %th District
+    %th Name
+    %th Level
+    %th Address
+    %th Phone
+    %th Feather
+    %th
+    %th
+    %th
+
+  - @gardens.each do |garden|
+    %tr
+      %td= garden.district.name if garden.district
+      %td= garden.name
+      %td= garden.level
+      %td= garden.address
+      %td= garden.phone
+      %td= garden.feature
+      %td= link_to 'Show', garden
+      %td= link_to 'Edit', edit_garden_path(garden)
+      %td= link_to 'Destroy', garden, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Garden', new_garden_path

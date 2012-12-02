@@ -51,6 +51,30 @@ lines.each_line do |line|
 end
 p parks
 
+hospitals = []
+lines = File.open("/Users/chengxiang/workspace/assets/hospitals.txt", "r").read
+lines.each_line do |line|
+  names = line.split
+  next if names.empty?
+  p names
+  d = District.where(name: names[0]).first
+  names[1..names.length].each do |s|
+    hospitals << Hospital.create(name: names[1], district: d)
+  end
+end
+p hospitals
+gardens = []
+lines = File.open("/Users/chengxiang/workspace/assets/gardens_demo.txt", "r").read
+lines.each_line do |line|
+  names = line.split
+  next if names.empty?
+  p names
+  d = District.where(name: names[0]).first
+  p d
+  gardens << Garden.create(name: names[1], level: "示范园", phone:names[2], address: names[3..names.length].join('; '), district: d)
+end
+p gardens
+
 villages = []
 %w(樱花坊 海桐苑 海桐小区).each do |name|
   villages << Village.create!(name: name, community: communities.first)

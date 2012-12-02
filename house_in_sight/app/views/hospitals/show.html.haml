@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @hospital.name
+%p
+  %b Level:
+  = @hospital.level
+%p
+  %b Address:
+  = @hospital.address
+%p
+  %b Phone:
+  = @hospital.phone
+%p
+  %b Feather:
+  = @hospital.feather
+
+= link_to 'Edit', edit_hospital_path(@hospital)
+\|
+= link_to 'Back', hospitals_path

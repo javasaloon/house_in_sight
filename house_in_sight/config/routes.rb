@@ -1,4 +1,8 @@
 HouseInSight::Application.routes.draw do
+  resources :gardens
+
+  resources :hospitals
+
   resources :parks
 
   resources :stations
