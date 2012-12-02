@@ -1,0 +1,2 @@
+module PrimarySchoolsHelper
+end

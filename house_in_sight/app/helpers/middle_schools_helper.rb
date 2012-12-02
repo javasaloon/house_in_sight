@@ -1,0 +1,2 @@
+module MiddleSchoolsHelper
+end

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @middle_school.name
+%p
+  %b Level:
+  = @middle_school.level
+%p
+  %b Address:
+  = @middle_school.address
+%p
+  %b Phone:
+  = @middle_school.phone
+%p
+  %b Feature:
+  = @middle_school.feature
+
+= link_to 'Edit', edit_middle_school_path(@middle_school)
+\|
+= link_to 'Back', middle_schools_path

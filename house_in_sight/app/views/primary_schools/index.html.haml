@@ -1,0 +1,33 @@
+%h1 Listing primary_schools
+
+%table
+  %tr
+    %th District
+    %th Name
+    %th Level
+    %th Address
+    %th Phone
+    %th Feature
+    %th Middle Schools
+    %th
+    %th
+    %th
+
+  - @primary_schools.each do |primary_school|
+    %tr
+      %td= primary_school.district.name
+      %td= primary_school.name
+      %td= primary_school.level
+      %td= primary_school.address
+      %td= primary_school.phone
+      %td= primary_school.feature
+      %td
+        - primary_school.middle_schools.each do |ms|
+          = ms.name
+      %td= link_to 'Show', primary_school
+      %td= link_to 'Edit', edit_primary_school_path(primary_school)
+      %td= link_to 'Destroy', primary_school, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Primary school', new_primary_school_path

@@ -1,4 +1,8 @@
 HouseInSight::Application.routes.draw do
+  resources :middle_schools
+
+  resources :primary_schools
+
   resources :gardens
 
   resources :hospitals

@@ -1,0 +1,12 @@
+= simple_form_for(@primary_school) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :level
+    = f.input :address
+    = f.input :phone
+    = f.input :feature
+
+  .form-actions
+    = f.button :submit

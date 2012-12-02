@@ -75,6 +75,30 @@ lines.each_line do |line|
 end
 p gardens
 
+primary_schools = []
+middle_schools = []
+lines = File.open("/Users/chengxiang/workspace/assets/primary_schools.txt", "r").read
+lines.each_line do |line|
+  names = line.split
+  next if names.empty?
+  p names
+  d = District.where(name: names[0]).first
+  ps = PrimarySchool.create!(name: names[1], feature: names[2], district: d)
+  primary_schools << ps
+  if names.length>3
+    names[3..names.length].each do |item|
+      ms = MiddleSchool.where(name: item).first || MiddleSchool.create!(name: item, district: d) if not ms
+      ps.middle_schools << ms
+      ps.upsert
+      ms.primary_schools << ps
+      ms.upsert
+      middle_schools << ms
+    end
+  end
+end
+p primary_schools
+p middle_schools
+
 villages = []
 %w(樱花坊 海桐苑 海桐小区).each do |name|
   villages << Village.create!(name: name, community: communities.first)
