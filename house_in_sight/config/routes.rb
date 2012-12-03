@@ -1,4 +1,6 @@
 HouseInSight::Application.routes.draw do
+  root :to => 'districts#index'
+
   resources :middle_schools
 
   resources :primary_schools
@@ -16,9 +18,10 @@ HouseInSight::Application.routes.draw do
   resources :plans
 
   resources :ads
-  #resources :districts do
-    #resources :communities
-  #end
+
+  resources :districts do
+    resources :communities
+  end
 
   get 'district/:id/communities', to: 'district#communities'
 
@@ -28,7 +31,6 @@ HouseInSight::Application.routes.draw do
 
   resources :apartments
   resources :apartment_steps
-  root :to => 'plans#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
