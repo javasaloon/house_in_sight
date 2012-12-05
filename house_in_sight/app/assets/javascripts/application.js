@@ -15,6 +15,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+house = new Object();// the global namespace
+
 var search = {
 
     autocompleted: function(dom) {
