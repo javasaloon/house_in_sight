@@ -1,5 +1,27 @@
-.row-fluid
-  .span10.offset1
+:javascript
+  $(document).ready(function(){
+    var map = new BMap.Map("map_canvas");
+    //var mymap = new HMap(map, "上海市", "张江镇");
+    //mymap.showMap("地铁站", $("#info"));
+    $('#cl li').each(function(index){
+      c = $.trim($(this).text())
+      $("#out").append(c);
+      //var mymap = new HMap(map, "上海市", c);
+      //mymap.showMap("地铁站", $("#info"));
+    } )
+  });
+
+.row
+  .span5.offset1.pagination
+    %textarea#out
+  .span5
+    %textarea#info
+
+.row
+  .span5
+    #map_canvas{style: "height:600px; width:100%; border: 1px solid gray;"}
+      Map
+  .span5
     %h5
       ="上海共有#{@districts.length}个区县，人口约1696万，面积约7945万平方公里。"
     %table.table.table-striped
@@ -8,8 +30,8 @@
         %th 特色
         %th 地铁
         %th 公园
-        %th 人口
-        %th 面积(平方公里)
+        -#%th 人口
+        -#%th 面积(平方公里)
         %th 学校
         %th 医院
 
@@ -21,11 +43,19 @@
               = City.first.metros.length.to_s + " 条"
             %td
               = district.parks.length.to_s + " 座"
-            %td 100万
-            %td 400万
+            -#%td 100万
+            -#%td 400万
             %td 
               = district.primary_schools.length.to_s + " 座小学, "
               = district.middle_schools.length.to_s + " 座中学"
-
             %td 
               = district.hospitals.length.to_s + " 座"
+
+.row
+  .span10.offset1.pagination
+    #cl
+      %ul
+        -@communities.each do |c|
+          %li
+            =c.name
+

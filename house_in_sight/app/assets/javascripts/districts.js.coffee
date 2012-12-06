@@ -1,26 +1,40 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+class HMap
+  constructor: (@map, @city, @community) ->
 
-class SeedMap
-  constructor: (@map) ->
-  searchNearby: (pattern, target) ->
-    options =
-      onSearchComplete: (results) ->
-        if local.getStatus() == BMAP_STATUS_SUCCESS
-          s = [];
-          s.push(results.getPoi(i).title + ", " + results.getPoi(i).address) for r in results.getCurrentNumPois()
-          $("#info").html(s.join("<br />"))
-    local = new BMap.LocalSearch(options)
-    local.searchNearby(pattern, target)
+  showMap: (pattern, divElem)->
+    myGeo = new BMap.Geocoder();
+    hmap = this
+    
+    myGeo.getPoint @community, (point) ->
+      if point
+        hmap.map.centerAndZoom point, 16
+        hmap.map.addOverlay(new BMap.Marker(point))
+        hmap.searchNearby(pattern, point, divElem)
+      return null
+    ,  @city
+    return null
 
-  showMap: ->
-    myGeo = new BMap.Geocoder()
-    myGeo.getPoint("张江镇", (point) ->
-      if point 
-        @map.centerAndZoom(point, 16)
-        @map.addOverlay(new BMap.Marker(point))
-        #@searchNearby "小学", point
-    , "上海市")
+  searchNearby: (pattern, target, divElem) ->
+    hmap = this
 
-window.SeedMap = SeedMap
+    options = 
+      onSearchComplete: (results) -> 
+        if (local.getStatus() == BMAP_STATUS_SUCCESS) 
+          s = []
+          len = results.getCurrentNumPois()-1
+          s.push(hmap.community + ", "+ results.getPoi(i).title + ", " + results.getPoi(i).address) for i in [0..len]
+          divElem.append(s.join("\\n"))
+        
+    local = new BMap.LocalSearch(@map, options);
+    local.searchNearby(pattern, target);
+    return null
+
+window.HMap = HMap
+
+#Sample
+#var map = new BMap.Map("map_canvas");
+#var mymap = new HMap(map, "上海市");
+#mymap.showMap("小学", "张江镇", $("#info"));
