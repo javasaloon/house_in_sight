@@ -25,8 +25,12 @@ class HMap
         if (local.getStatus() == BMAP_STATUS_SUCCESS) 
           s = []
           len = results.getCurrentNumPois()-1
-          s.push(hmap.community + ", "+ results.getPoi(i).title + ", " + results.getPoi(i).address) for i in [0..len]
-          divElem.append(s.join("\\n"))
+          for i in [0..len]
+            pr = results.getPoi(i)
+            point = pr.point
+            gps = "(#{point.lng},#{point.lat})"
+            s.push(hmap.community + "; "+ pr.title + "; " + pr.address + "; "+gps)
+          divElem.append(s.join("\\n")).append("\\n")
         
     local = new BMap.LocalSearch(@map, options);
     local.searchNearby(pattern, target);

@@ -1,14 +1,19 @@
 :javascript
   $(document).ready(function(){
     var map = new BMap.Map("map_canvas");
-    //var mymap = new HMap(map, "上海市", "张江镇");
-    //mymap.showMap("地铁站", $("#info"));
-    $('#cl li').each(function(index){
-      c = $.trim($(this).text())
-      $("#out").append(c);
-      //var mymap = new HMap(map, "上海市", c);
-      //mymap.showMap("地铁站", $("#info"));
-    } )
+    var targets = ["幼儿园", "小学", "中学", "高中", "大学", "公园","超市", "医院", "地铁站"];
+    var target = targets[0];
+    var count =  1;
+    var mymap = new HMap(map, "上海市", "张江镇");
+    if(count == 1) mymap.showMap(target, $("#info"));
+    else {
+      $('#cl li').each(function(index){
+        c = $.trim($(this).text())
+        $("#out").append(c);
+        var mymap = new HMap(map, "上海市", c);
+        mymap.showMap(target, $("#info"));
+      });
+    }
   });
 
 .row
