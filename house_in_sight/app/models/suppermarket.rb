@@ -1,0 +1,2 @@
+class Suppermarket < Service
+end

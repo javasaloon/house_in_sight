@@ -1,0 +1,2 @@
+class College < Service
+end
