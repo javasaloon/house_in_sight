@@ -1,6 +1,8 @@
 %p#notice= notice
 
+%h3=@district.name
 
-= link_to 'Edit', edit_district_path(@district)
-\|
-= link_to 'Back', districts_path
+-@district.communities.each do |comm|
+  = comm.name + " "
+
+

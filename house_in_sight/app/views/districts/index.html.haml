@@ -17,50 +17,22 @@
   });
 
 .row
-  .span5.offset1.pagination
-    %textarea#out
-  .span5
-    %textarea#info
-
-.row
   .span5
     #map_canvas{style: "height:600px; width:100%; border: 1px solid gray;"}
       Map
-  .span5
+  .span2
+    #info
+
+  .span3
     %h5
       ="上海共有#{@districts.length}个区县，人口约1696万，面积约7945万平方公里。"
     %table.table.table-striped
       %tr
         %th 区县
         %th 特色
-        %th 地铁
-        %th 公园
-        -#%th 人口
-        -#%th 面积(平方公里)
-        %th 学校
-        %th 医院
 
         - @districts.each do |district|
           %tr
             %td= district.name
-            %td= district.feature || "市中心"
-            %td
-              = City.first.metros.length.to_s + " 条"
-            %td
-              = district.parks.length.to_s + " 座"
-            -#%td 100万
-            -#%td 400万
-            %td 
-              = district.primary_schools.length.to_s + " 座小学, "
-              = district.middle_schools.length.to_s + " 座中学"
-            %td 
-              = district.hospitals.length.to_s + " 座"
-
-.row
-  .span10.offset1.pagination
-    #cl
-      %ul
-        -@communities.each do |c|
-          %li
-            =c.name
+            %td= district.features.join(', ') || "市中心"
 

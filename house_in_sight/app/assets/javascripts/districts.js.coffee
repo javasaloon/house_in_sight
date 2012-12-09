@@ -30,7 +30,7 @@ class HMap
             point = pr.point
             gps = "(#{point.lng},#{point.lat})"
             s.push(hmap.community + "; "+ pr.title + "; " + pr.address + "; "+gps)
-          divElem.append(s.join("\\n")).append("\\n")
+          divElem.append(s.join("</BR>")).append("</BR>")
         
     local = new BMap.LocalSearch(@map, options);
     local.searchNearby(pattern, target);
