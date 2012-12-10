@@ -4,14 +4,21 @@ class District
   field :features, :type => Array
 
   has_many :communities
-  #has_many :parks
-  #has_many :metros
-  #has_many :gardens
-  #has_many :hospitals
-  #has_many :primary_schools
-  #has_many :middle_schools
 
   belongs_to :city
 
   attr_accessible :name, :features, :city
+
+  def countOf(serviceName)
+    communities.inject(0) do |sum, comm|
+      sum + comm.countOf(serviceName)
+    end
+  end
+
+  def self.avgOf(serviceName)
+    District.all.inject(0) do |sum, d|
+      sum + d.countOf(serviceName)
+    end
+    sum / District.count
+  end
 end

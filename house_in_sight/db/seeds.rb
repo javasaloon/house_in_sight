@@ -1,6 +1,4 @@
 # encoding: UTF-8
-
-
 def seed(data_dir, city)
   #seed_districts(data_dir, city)
   #seed_metros(data_dir, city)
@@ -11,9 +9,14 @@ end
 
 def seed_districts_features()
   p "seeding districts' features ... "
+  avg = 45 #District.avgOf('parks')
+  p avg
   District.all.each do |dis|
+    p dis.name
+    features = []
+    features << "绿色街区" if dis.countOf('parks') > avg
     dis.update_attributes(
-      features: %w(教育中心 商业中心 金融 快速发展)
+      features: features
     )
   end
 
@@ -55,9 +58,9 @@ def seed_service(txt, service)
     point = Point.create(lng: coordinators[0], lat: coordinators[1])
     comm = Community.where(name: /.*#{words[0]}.*/).first
     p "not found #{words[0]}" if comm == nil
-    addr = Address.create(name: words[2], community: comm, point: point)
+    addr = Address.create(name: words[2], point: point)
     phone = words[3] || ""
-    service.create(name: words[1], address: addr, phone: phone)
+    service.create(name: words[1], address: addr, phone: phone, community: comm)
   end
 end
 

@@ -3,7 +3,6 @@ class Address
   field :name, type: String
 
   embeds_one :point
-  belongs_to :community
 
-  attr_accessible :name, :point, :community
+  attr_accessible :name, :point
 end
