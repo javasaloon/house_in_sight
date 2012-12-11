@@ -9,12 +9,27 @@ end
 
 def seed_districts_features()
   p "seeding districts' features ... "
-  avg = 45 #District.avgOf('parks')
-  p avg
+  featureHash = {
+    :parks => ["绿色街区"] ,
+    :stations  => ["交通便利"] ,
+    :gardens => ["幼儿园学区"] ,
+    :hospitals => ["医院密集"] ,
+    :primary_schools => ["小学学区"] ,
+    :middle_schools => ["中学学区"]
+  }
+  featureHash.each do |k, v|
+    featureHash[k] = v.insert(0, District.avgOf(k))
+  end
+  p featureHash
+
   District.all.each do |dis|
-    p dis.name
     features = []
-    features << "绿色街区" if dis.countOf('parks') > avg
+    featureHash.each do |k, v|
+      features << v[1] if dis.countOf(k) > v[0]
+    end
+
+    p dis.name
+    p features
     dis.update_attributes(
       features: features
     )

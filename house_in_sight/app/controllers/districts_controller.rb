@@ -2,7 +2,7 @@ class DistrictsController < ApplicationController
   # GET /districts
   # GET /districts.json
   def index
-    @districts = District.all
+    @districts = District.all #.sort!{|a, b| a.features.to_s <=> b.features.to_s}
     @communities = Community.all
 
     respond_to do |format|

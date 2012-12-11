@@ -16,8 +16,9 @@ class District
   end
 
   def self.avgOf(serviceName)
-    District.all.inject(0) do |sum, d|
-      sum + d.countOf(serviceName)
+    sum = 0
+    District.all.each do |d|
+      sum += d.countOf(serviceName)
     end
     sum / District.count
   end
